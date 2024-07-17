@@ -1,0 +1,407 @@
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+html {
+  display: block;
+  line-height: 1.5;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: hidden;
+  height: 100%;
+}
+
+body {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  background-color: #303030;
+  margin: 0;
+  line-height: inherit;
+  overflow: hidden;
+  height: 100%;
+}
+
+ul {
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+  unicode-bidi: isolate;
+}
+
+menu, ol, ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+  unicode-bidi: isolate;
+}
+
+blockquote, dd, dl, figure, h1, h2, h3, h4, h5, h6, hr, p, pre {
+  margin: 0;
+}
+
+div {
+  display: block;
+  unicode-bidi: isolate;
+}
+
+.bolded {
+  font-weight: 800;
+}
+
+.error {
+  display: none;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+  padding: 0.75rem;
+  margin: 0.5rem;
+  background: rgba(0,0,0,0.25);
+  border-radius: 1rem;
+  border: rgba(0,0,0,0.5) solid 0.25rem;
+  transition: 0.3s;
+  animation: drop .5s linear forwards;
+}
+
+#naerror {
+  display: none;
+  color: gold;
+}
+
+#screenerror {
+  right: 35%;
+  padding: 0.25rem;
+  display: none;
+  color: red;
+  font-size: 0.7rem;
+}
+
+.gameTabs {
+  display: flex;
+  align-items: center;
+}
+
+.mainPage {
+  width: 100%;
+  color: white;
+  background-color: #1e1e1e;
+}
+
+.headerButtons {
+  padding: 0.75rem 1rem;
+  color: #cccccc;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  transition: 0.3s;
+}
+
+.headerButtons:hover {
+  cursor: pointer;
+  color: white
+} 
+
+.headerButtonSelected {
+  cursor: default;
+  padding: 0.75rem 1rem;
+  color: white;
+  font-weight: 800;
+  border-bottom: #008542 solid 4px;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.gameBg {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+}
+
+.gameLogo {
+  position: absolute;
+  left: 27.5%;
+  width: 100%;
+  top: 6%;
+  animation: drop .4s linear forwards;
+  color: purple;
+}
+
+.gameSelection {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 4rem;
+  justify-content: space-around;
+  display: flex;
+  background-color: #1e1e1e;
+}
+
+.versionSelector {
+  display: flex;
+  position: absolute;
+  left: -13rem;
+  bottom: 0px;
+  top: 0px;
+  align-items: center;
+}
+
+.dropdownSelector {
+  position: relative;
+  margin-left: 14rem;
+  display: flex;
+  height: 4rem;
+  width: 22rem;
+  align-items: center;
+  justify-content: space-around;
+  gap: 0.5rem;
+  color: white;
+  transition: 0.3s;
+}
+
+.dropdownSelector:hover {
+  cursor: pointer;
+  background-color: #353535;
+}
+
+.dropdownIcon {
+  color: white;
+  width: 1.25rem;
+}
+
+.dropdownMenu {
+  position: absolute;
+  left: -13rem;
+  top: 0px;
+  bottom: 2rem;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dropdownOptions {
+  position: absolute;
+  margin-left: 14rem;
+  display: flex;
+  height: 4rem;
+  width: 22rem;
+  align-items: center;
+  justify-content: space-around;
+  gap: 0.5rem;
+  color: white;
+  background-color: #131313;
+  z-index: 999;
+}
+
+.dropdownOptions:hover {
+  background-color: #008542;
+}
+
+.dropdownOption {
+  position: absolute;
+  left: 1.5rem;
+  margin-right: 2.25rem;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.dropdownOptionText {
+  margin-right: 3.5rem;
+  display: grid;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.centeredIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.versionText {
+  margin-right: 3.5rem;
+  display: grid;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.playButton {
+  position: absolute;
+  left: 34%;
+  bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  width: 300px;
+  height: 70px;
+  background-image: url(../images/play.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: 0.1s;
+}
+
+.playButton:hover {
+  cursor: pointer;
+  background-image: url(../images/play-hover.png);
+  transform: scale(1.05);
+}
+
+.playButton2 {
+  position: absolute;
+  left: 34%;
+  bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  width: 300px;
+  height: 70px;
+  background-image: url(../images/preview.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: 0.1s;
+}
+
+.playButton2:hover {
+  cursor: pointer;
+  background-image: url(../images/preview-hover.png);
+  transform: scale(1.05);
+}
+
+.username {
+  position: absolute;
+  bottom: 0px;
+  right: 2.5rem;
+  top: 0px;
+  line-height: 1.75rem;
+}
+
+.usernameText {
+  margin-right: 14vw;
+  font-size: 1.125rem;
+}
+
+.sidebar {
+  position: relative;
+  float: left;
+  height: 100vh;
+  width: 15rem;
+  color: white;
+  background-color: #1e1e1e;
+}
+
+.eaglercraftText {
+  font-size: 0.875em;
+}
+
+.sidebarOptionsTop {
+  display: flex;
+  height: 4rem;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.25rem;
+  padding-left: 1.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  transition: 0.3s;
+}
+
+.sidebarOptionsTop:hover {
+  cursor: pointer;
+  background-color: #353535;
+}
+
+.sidebarOptionsBottom:hover {
+  cursor: pointer;
+  background-color: #353535;
+}
+
+.sidebarOptionsBottom {
+  position: absolute;
+  bottom: 2rem;
+  left: 0px;
+  right: 0px;
+  display: flex;
+  height: 4rem;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.75rem;
+  padding-left: 1.25rem;
+  z-index: 1;
+  transition: 0.3s;
+}
+
+.launcherVersion {
+  position: absolute;
+  bottom: 0.25rem;
+  left: 0px;
+  right: 0px;
+  padding-left: 1.25rem;
+  z-index: 1;
+  font-size: 0.875em;
+  color: #cccccc;
+}
+
+.gameHeader {
+  width: 86%; 
+  height: 94px; 
+  padding: 1.5rem;
+}
+
+.dropdown1 {bottom: 2rem;}
+.dropdown2 {bottom: 6rem;}
+.dropdown3 {bottom: 2rem;}
+.dropdown4 {bottom: 6rem;}
+.dropdown5 {bottom: 10rem;}
+.dropdown6 {bottom: 14rem;}
+.dropdown7 {bottom: 18rem;}
+.dropdown8 {bottom: 2rem;}
+.dropdown9 {bottom: 6rem;}
+.dropdown10 {bottom: 10rem;}
+
+.zoom-out {
+  animation: zoomed 0.2s linear forwards;
+}
+
+#P{
+    left: -45px;
+  }
+  #L{
+    left: -15px;
+  }
+  #A{
+    right: -15px;
+  }
+  #Y{
+    right: -45px;
+  }
+  
+  .h {
+    opacity:0;
+    animation: drop .4s linear forwards;
+    color: #9b5de5;
+  }
+  
+  
+  @keyframes drop {
+    0% {transform: translateY(-200px) scaleY(0.9); opacity: 0;}
+    5% {opacity: .7;}
+    50% {transform: translateY(0px) scaleY(1); opacity: 1;}
+    65% {transform: translateY(-17px) scaleY(.9); opacity: 1;}
+    75% {transform: translateY(-22px) scaleY(.9); opacity: 1;}
+    100% {transform: translateY(0px) scaleY(1); opacity: 1;}
+  }
+
+  @keyframes zoomed {
+    100% {transform: translateY(10px) scale(0); display: none;}
+  }

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ampler Launcher</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" media="screen and (max-width: 1100px)" href="css/screensize.css">
+    <link rel="stylesheet" media="screen and (max-height: 550px)" href="css/screensize.css">
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!--Discord-->
+    <meta content="Ampler Launcher" property="og:title">
+    <meta content="A minecraft themed launcher for Eaglercraft!" property="og:description">
+    <meta content="https://irv77.github.io/AmplerLauncher/" property="og:url">
+    <meta content="https://irv77.github.io/AmplerLauncher/mc/logo.png" property="og:image">
+    <meta content="#786d81" data-react-helmet="true" name="theme-color">
+</head>
+
+<body style="font-family: 'Roboto', sans-serif;">
+    <div id="naerror" class="error">
+        <div>
+            <p class="bolded">SORRY!</p>
+            <p> This feature hasn't been made yet.</p>
+        </div>
+    </div>
+    <div id="screenerror" class="error">
+        <div>
+            <p class="bolded">SORRY!</p>
+            <p> Currently this screen resolution is buggy.</p>
+        </div>
+    </div>
+    <div class="sidebar" id="sidebar">
+        <div id="gtabs1" class="sidebarOptionsTop" style="gap: 0.77rem;" onclick="errorNA()"> <img src="./images/m-news.png" width="25px"
+                alt><div class="gTabsText"><p> News</p></div></div>
+        <div onclick="webedition()" id="gtabs2" style="font-weight: 700; border-left: #008542 solid 4px;"
+            class="sidebarOptionsTop"> <img src="./images/i-web.png" width="30px" alt>
+            <div class="gTabsText">
+                <p class="eaglercraftText"> EAGLERCRAFT : </p>
+                <p>Web Edition </p>
+            </div>
+        </div>
+        <div onclick="moddededition()" id="gtabs3" class="sidebarOptionsTop"> <img src="./images/i-modded.png"
+                width="30px" alt>
+            <div class="gTabsText">
+                <p class="eaglercraftText"> EAGLERCRAFT : </p>
+                <p>Modded Editions </p>
+            </div>
+        </div>
+        <div onclick="eaglercontrols()" id="gtabs4" class="sidebarOptionsTop"> <img src="./images/i-controls.png"
+                width="30px" alt>
+            <div class="gTabsText">
+                <p class="eaglercraftText"> EAGLERCRAFT : </p>
+                <p>Mobile/Controller </p>
+            </div>
+        </div>
+        <div onclick="eaglerservers()" id="gtabs5" class="sidebarOptionsTop"> <img src="./images/i-servers.png"
+                width="30px" alt>
+            <div class="gTabsText">
+                <p class="eaglercraftText"> EAGLERCRAFT : </p>
+                <p>Servers </p>
+            </div>
+        </div>
+        <div onclick="eaglercon()" id="gtabs6" class="sidebarOptionsTop"> <img src="./images/i-live.png"
+                width="30px" alt>
+            <div class="gTabsText">
+                <p class="eaglercraftText"> EAGLERCON : </p>
+                <p>Live </p>
+            </div>
+        </div>
+        <div id="gtabs7" class="sidebarOptionsBottom" style="bottom: 6rem;" onclick="errorNA()">
+            <img src="./images/m-credits.png" width="25px" alt><div class="gTabsText"><p> Credits</p></div>
+        </div>
+        <div id="gtabs8" class="sidebarOptionsBottom" onclick="errorNA()">
+            <img src="./images/m-settings.png" width="25px" alt><div class="gTabsText"><p> Settings</p></div>
+        </div>
+        <div id="gtabs9" class="launcherVersion">
+            <p>v1.0.00</p>
+        </div>
+    </div>
+    <div class="mainPage">
+        <div id="gameheader" class="gameHeader">
+            <div>
+                <p id="gameedition" class="currentGame bolded">EAGLERCRAFT WEB EDITION</p>
+            </div>
+            <div id="javatabs">
+                <ul class="gameTabs">
+                    <li id="header1" class="headerButtonSelected">Play</li>
+                    <li id="header2" class="headerButtons" onclick="errorNA()">DLC</li>
+                    <li id="header3" class="headerButtons" onclick="errorNA()">FAQ</li>
+                    <li id="header4" class="headerButtons" onclick="errorNA()">Installations</li>
+                    <li id="header5" class="headerButtons" onclick="errorNA()">Skins</li>
+                    <li id="header6" class="headerButtons" onclick="errorNA()">Patch Notes</li>
+                </ul>
+            </div>
+        </div>
+        <div id="game-bg" class="gameBg" style="background-image: url(./images/web-edition.jpg);">
+            <div class="gameLogo"><img id="game-header" src="./images/web-title.png" width="450px"
+                    alt="eaglercraft">
+            </div>
+        </div>
+        <div id="gameselection" class="gameSelection">
+            <div class="versionSelector">
+                <div id="drop" class="dropdownSelector" onclick="dropdowntoggle()">
+                    <div style="display: flex; gap: 0.75rem;">
+                        <div class="centeredIcon">
+                            <img id="gameicon" src="./images/m-logo1.png" width="30px" />
+                        </div>
+                        <div class="versionText">
+                            <p id="gametitle" class="bolded">Latest release</p>
+                            <p id="gameversion">1.8.8-u35</p>
+                        </div>
+                        <div class="centeredIcon">
+                            <span id="dropdownuparrow"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" class="dropdownIcon">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M6 9l6 6l6 -6" />
+                                </svg></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="dropdn" class="dropdownMenu" style="visibility: hidden;">
+                <div id="dropdown10" class="dropdownOptions dropdown10" onclick="dogomobile(); dropdowntoggle();" style="display: none;">
+                    <div class="dropdownOption">
+                        <div class="centeredIcon">
+                            <img src="./images/m-logo10.png" width="30px" />
+                        </div>
+                        <div class="dropdownOptionText">
+                            <p class="bolded">FlamedDogo's Mobile UI</p>
+                            <p>1.8.8</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="dropdown9" class="dropdownOptions dropdown9" onclick="redmobile(); dropdowntoggle();" style="display: none;">
+                    <div class="dropdownOption">
+                        <div class="centeredIcon">
+                            <img src="./images/m-logo9.png" width="30px" />
+                        </div>
+                        <div class="dropdownOptionText">
+                            <p class="bolded">Red's Mobile UI</p>
+                            <p>1.8.8</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="dropdown8" class="dropdownOptions dropdown8" onclick="redcontroller(); dropdowntoggle();" style="display: none;">
+                    <div class="dropdownOption">
+                        <div class="centeredIcon">
+                            <img src="./images/m-logo8.png" width="30px" />
+                        </div>
+                        <div class="dropdownOptionText">
+                            <p class="bolded">Red's Controller Support</p>
+                            <p>1.8.8</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="dropdown7" class="dropdownOptions dropdown7" onclick="atraclient(); dropdowntoggle();" style="display: none;">
+                    <div class="dropdownOption">
+                        <div class="centeredIcon">
+                            <img src="./images/m-logo7.png" width="30px" />
+                        </div>
+                        <div class="dropdownOptionText">
+                            <p class="bolded">Astra Client</p>
+                            <p>1.8.8</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="dropdown6" class="dropdownOptions dropdown6" onclick="bettereagler(); dropdowntoggle();" style="display: none;">
+                    <div class="dropdownOption">
+                        <div class="centeredIcon">
+                            <img src="./images/m-logo6.png" width="30px" />
+                        </div>
+                        <div class="dropdownOptionText">
+                            <p class="bolded">BetterEagler</p>
+                            <p>1.8.8</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="dropdown5" class="dropdownOptions dropdown5" onclick="eaglerforge(); dropdowntoggle();" style="display: none;">
+                    <div class="dropdownOption">
+                        <div class="centeredIcon">
+                            <img src="./images/m-logo5.png" width="30px" />
+                        </div>
+                        <div class="dropdownOptionText">
+                            <p class="bolded">Eaglerforge</p>
+                            <p>1.8.8</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="dropdown4" class="dropdownOptions dropdown4" onclick="resentclient(); dropdowntoggle();" style="display: none;">
+                    <div class="dropdownOption">
+                        <div class="centeredIcon">
+                            <img src="./images/m-logo4.png" width="30px" />
+                        </div>
+                        <div class="dropdownOptionText">
+                            <p class="bolded">Resent Client</p>
+                            <p>1.8.8</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="dropdown3" class="dropdownOptions dropdown3" onclick="shadowclient(); dropdowntoggle();" style="display: none;">
+                    <div class="dropdownOption">
+                        <div class="centeredIcon">
+                            <img src="./images/m-logo3.png" width="30px" />
+                        </div>
+                        <div class="dropdownOptionText">
+                            <p class="bolded">Shadow Client</p>
+                            <p>1.8.8</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="dropdown2" class="dropdownOptions dropdown2" onclick="latestrelease(); dropdowntoggle();">
+                    <div class="dropdownOption">
+                        <div class="centeredIcon">
+                            <img src="./images/m-logo1.png" width="30px" />
+                        </div>
+                        <div class="dropdownOptionText">
+                            <p class="bolded">Latest release</p>
+                            <p>1.8.8-u35</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="dropdown1" class="dropdownOptions dropdown1" onclick="previousrelease(); dropdowntoggle();">
+                    <div class="dropdownOption">
+                        <div class="centeredIcon">
+                            <img src="./images/m-logo2.png" width="30px" />
+                        </div>
+                        <div class="dropdownOptionText">
+                            <p class="bolded">Previous release</p>
+                            <p>1.5.2-sp1.01</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a id="playbutton" href="mc/1.8.8"><div id="mainbutton" class="playButton"></div></a>
+            <div class="username centeredIcon bolded">
+                <p class="usernameText">Generic User</p>
+            </div>
+        </div>
+    </div>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
