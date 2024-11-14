@@ -2,73 +2,60 @@
     visibility: hidden;
   }
   .sidebar {
-    width: 4.5rem;
+    width: 5.5vw;
   }
   .launcherVersion {
-    font-size: 0.8125em;
+    font-size: 1.1vw;
   }
-  .sidebarOptionsTop {
-    height: 2.5rem;
-    margin-bottom: .25rem;
+  .sidebarOptions {
+    height: 11vw;
+    margin-bottom: 1.3vw;
+    padding-left: 1.3vw;
   }
-  .sidebarOptionsBottom {
-    height: 2.5rem;
+  .sidebarOptions.sidebarBottom {
+    height: 7vw;
+    margin-bottom: 0;
+  }
+  #gtabs2 img, #gtabs3 img, #gtabs4 img { width: 2.8vw; }
+  #gtabs5 { bottom: 10.5vw; }
+  #gtabs5 img, #gtabs6 img { width: 2.2vw; padding-left: 0.4vw; }
+  .username {
+    right: 10vw;
   }
   .usernameText {
-    margin-right: 5vw;
-    font-size: 1rem;
+    font-size: 1.5vw;
   }
   .currentGame {
-    font-size: 1em;
+    font-size: 1.4vw;
   }
   .headerButtons {
-    font-size: 0.8125rem;
+    font-size: 1.2vw;
   }
   .headerButtonSelected {
-    font-size: 0.8125rem;
+    font-size: 1.2vw;
   }
   .gameHeader {
-    height: 82px;
-    padding: 0.75rem 1.5rem;
+    padding: 2vw 2.5vw 1vw;
   }
   .gameLogo {
-    top: 30%;
-  }
-  .gameSelection {
-    height: 3rem;
+    top: 35%;
+    left: 26%;
   }
   .dropdownSelector {
-    height: 3rem;
-    width: 19rem;
-    margin-left: 14rem;
+    width: 25vw;
+    margin-left: 3vw;
   }
   .versionText {
-    font-size: 0.8rem;
+    font-size: 1.4vw;
   }
   .dropdownOptions {
-    font-size: 0.8rem;
-    height: 3rem;
-    width: 19rem;
-    margin-left: 14rem;
+    font-size: 1.4vw;
+    width: 25vw;
+    margin-left: 3vw;
   }
-  .dropdown1 {bottom: 1rem;}
-  .dropdown2 {bottom: 4rem;}
-  .dropdown3 {bottom: 1rem;}
-  .dropdown4 {bottom: 4rem;}
-  .dropdown5 {bottom: 7rem;}
-  .dropdown6 {bottom: 10rem;}
-  .dropdown7 {bottom: 13rem;}
-  .dropdown8 {bottom: 1rem;}
-  .dropdown9 {bottom: 4rem;}
-  .dropdown10 {bottom: 7rem;}
   .playButton {
-    width: 260px;
-    height: 60px;
-    left: 36%;
-  }
-  .playButton2 {
-    width: 260px;
-    height: 60px;
+    width: 24.8vw;
+    height: 5.6vw;
     left: 36%;
   }
 
