@@ -37,35 +37,57 @@ blockquote, dd, dl, figure, h1, h2, h3, h4, h5, h6, hr, p, pre {
     font-weight: 800;
 }
 
-/* Credits container with Minecraft style */
+/* above the brand new added section by @MR_Pokkkie*/
 .credits-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #101010; /* Dark Minecraft-style background */
-    color: white;
-    text-align: center;
+    background-image: url('images/web-edition.jpg'); 
+    background-size: cover;
+    background-position: center;
     display: flex;
-    align-items: center;
     justify-content: center;
-    flex-direction: column;
-    overflow: hidden;
+    align-items: center;
+    color: white;
+    font-family: 'Minecraft', sans-serif; 
+    text-align: center;
     z-index: 9999;
-    font-family: 'Minecraft', 'Arial', sans-serif; /* Minecraft-style font */
-    font-size: 1.5vw; /* Adjusted size for readability */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Pixelated text shadow effect */
+    flex-direction: column;
+    padding: 2vw;
+    box-sizing: border-box;
+    filter: brightness(0.8);
+    animation: fadeIn 1s ease-out forwards;
 }
 
-/* Scroll effect for credits */
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
 .credits-content {
     width: 80%;
     max-width: 600px;
     animation: scrollCredits 10s linear infinite;
+    font-size: 1.5vw;
+    letter-spacing: 0.1vw;
+    background: rgba(0, 0, 0, 0.5); 
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-weight: bold;
+    animation: scrollCredits 10s linear infinite;
 }
 
-/* Adding pixel-like scroll effect */
+
 @keyframes scrollCredits {
     from {
         transform: translateY(100%);
@@ -75,38 +97,45 @@ blockquote, dd, dl, figure, h1, h2, h3, h4, h5, h6, hr, p, pre {
     }
 }
 
-/* Skip Button Style (Minecraft-inspired button) */
+
 .skip-button {
     position: absolute;
     bottom: 5%;
-    background-color: #ff0000;
+    background-color: #ff4c4c;
     color: white;
-    padding: 10px 20px;
-    border: 2px solid #e00000;
+    padding: 15px 30px;
+    border: none;
     cursor: pointer;
-    font-size: 1vw;
-    font-family: 'Minecraft', 'Arial', sans-serif;
-    text-transform: uppercase;
-    border-radius: 5px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+    font-size: 1.5vw;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
 }
 
 .skip-button:hover {
-    background-color: #cc0000;
-    border-color: #a00000;
+    background-color: #e53939;
+    transform: scale(1.1);
 }
 
-.skip-button:focus {
-    outline: none;
+
+@media (max-width: 768px) {
+    .credits-content {
+        font-size: 2.5vw;
+    }
+    .skip-button {
+        font-size: 4vw;
+        padding: 10px 20px;
+    }
 }
 
-/* Credits text scroll with Minecraft aesthetic */
-.credits-content p {
-    font-size: 1.2vw;
-    line-height: 1.6vw;
-    letter-spacing: 0.05vw;
+
+body {
+    font-family: 'Minecraft', sans-serif; 
 }
 
+
+/* above the brand new added section by @MR_Pokkkie*/
 
 
 .error {
