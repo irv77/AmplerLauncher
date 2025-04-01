@@ -38,38 +38,6 @@ blockquote, dd, dl, figure, h1, h2, h3, h4, h5, h6, hr, p, pre {
 }
 
 /* above the brand new added section by @MR_Pokkkie*/
-
-*, ::after, ::before {
-    box-sizing: border-box;
-}
-
-html {
-    display: block;
-    line-height: 1.5;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    overflow: hidden;
-    height: 100%;
-}
-
-body {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #303030;
-    margin: 0;
-    line-height: inherit;
-    overflow: hidden;
-    height: 100%;
-    font-family: 'Minecraft', sans-serif;
-    background-image: url('images/your-bg-image.jpg'); /* Update the filename if necessary */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
 .credits-container {
     position: fixed;
     top: 0;
@@ -102,6 +70,7 @@ body {
 .credits-content {
     width: 80%;
     max-width: 600px;
+    animation: scrollCredits 10s linear infinite;
     font-size: 2vw;
     letter-spacing: 0.1vw;
     background: rgba(0, 0, 0, 0.5);
@@ -125,8 +94,7 @@ body {
 
 .skip-button {
     position: absolute;
-    top: 2%;
-    right: 2%;
+    bottom: 5%;
     background-color: #ff4c4c;
     color: white;
     padding: 15px 30px;
@@ -153,6 +121,12 @@ body {
         padding: 10px 20px;
     }
 }
+
+body {
+    font-family: 'Minecraft', sans-serif;
+}
+
+
 /* above the brand new added section by @MR_Pokkkie*/
 
 
