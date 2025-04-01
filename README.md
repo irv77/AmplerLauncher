@@ -24,7 +24,7 @@
 <details>
 <summary>Click here to expand feature list</summary>
 
-- [ ] Add Credits screen
+- [x] Add Credits screen
 - [ ] Add Settings screen
 - [x] Rewrite some of the css and js
 - [ ] Organize code, and add comments
