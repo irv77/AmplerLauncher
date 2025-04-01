@@ -25,6 +25,9 @@ function webedition(){
     document.getElementById('gtabs2').style.borderLeft = '#008542 solid 4px';
     document.getElementById('dropdown1').style.display = 'flex';
     document.getElementById('dropdown2').style.display = 'flex';
+    document.getElementById('dropdown11').style.display = 'flex';
+    document.getElementById('dropdown12').style.display = 'flex';
+    document.getElementById('dropdown13').style.display = 'flex';
     latestrelease()
 }
 function moddededition(){
@@ -90,7 +93,7 @@ function redcontroller() {
 
 function astraclient() {
     document.getElementById('gametitle').innerHTML = 'Astra Client';
-    document.getElementById('gameversion').innerHTML = '1.8.8-v1.3';
+    document.getElementById('gameversion').innerHTML = '1.8.8-v1.5';
     document.getElementById('gameicon').src = './images/m-logo7.png';
     document.getElementById('playbutton').href = 'mc/astraclient/';
 }
@@ -125,15 +128,36 @@ function shadowclient() {
 
 function latestrelease() {
     document.getElementById('gametitle').innerHTML = 'Latest release';
-    document.getElementById('gameversion').innerHTML = '1.8.8-u41';
+    document.getElementById('gameversion').innerHTML = '1.12.2-u2';
     document.getElementById('gameicon').src = './images/m-logo1.png';
-    document.getElementById('playbutton').href = 'mc/1.8.8/';
+    document.getElementById('playbutton').href = 'mc/1.12.2/';
+}
+
+function latestreleasewasm() {
+    document.getElementById('gametitle').innerHTML = 'Latest release WASM';
+    document.getElementById('gameversion').innerHTML = '1.12.2-u2-wasm';
+    document.getElementById('gameicon').src = './images/m-logo1.png';
+    document.getElementById('playbutton').href = 'mc/1.12.2-wasm/';
 }
 
 function previousrelease() {
     document.getElementById('gametitle').innerHTML = 'Previous release';
-    document.getElementById('gameversion').innerHTML = '1.5.2-sp1.01';
+    document.getElementById('gameversion').innerHTML = '1.8.8-u50';
     document.getElementById('gameicon').src = './images/m-logo2.png';
+    document.getElementById('playbutton').href = 'mc/1.8.8/';
+}
+
+function previousreleasewasm() {
+    document.getElementById('gametitle').innerHTML = 'Previous release WASM';
+    document.getElementById('gameversion').innerHTML = '1.8.8-u50-wasm';
+    document.getElementById('gameicon').src = './images/m-logo2.png';
+    document.getElementById('playbutton').href = 'mc/1.8.8-wasm/';
+}
+
+function olderrelease() {
+    document.getElementById('gametitle').innerHTML = 'Older release';
+    document.getElementById('gameversion').innerHTML = '1.5.2-sp2.01';
+    document.getElementById('gameicon').src = './images/m-logo11.png';
     document.getElementById('playbutton').href = 'mc/1.5.2/';
 }
 
@@ -171,6 +195,9 @@ function resetSelected() {
     document.getElementById('dropdown8').style.display = 'none';
     document.getElementById('dropdown9').style.display = 'none';
     document.getElementById('dropdown10').style.display = 'none';
+    document.getElementById('dropdown11').style.display = 'none';
+    document.getElementById('dropdown12').style.display = 'none';
+    document.getElementById('dropdown13').style.display = 'none';
 }
 
 function resetDefault() {
