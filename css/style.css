@@ -37,13 +37,14 @@ blockquote, dd, dl, figure, h1, h2, h3, h4, h5, h6, hr, p, pre {
     font-weight: 800;
 }
 
+/* Credits container with Minecraft style */
 .credits-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: black;
+    background-color: #101010; /* Dark Minecraft-style background */
     color: white;
     text-align: center;
     display: flex;
@@ -52,14 +53,19 @@ blockquote, dd, dl, figure, h1, h2, h3, h4, h5, h6, hr, p, pre {
     flex-direction: column;
     overflow: hidden;
     z-index: 9999;
+    font-family: 'Minecraft', 'Arial', sans-serif; /* Minecraft-style font */
+    font-size: 1.5vw; /* Adjusted size for readability */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Pixelated text shadow effect */
 }
 
+/* Scroll effect for credits */
 .credits-content {
     width: 80%;
     max-width: 600px;
     animation: scrollCredits 10s linear infinite;
 }
 
+/* Adding pixel-like scroll effect */
 @keyframes scrollCredits {
     from {
         transform: translateY(100%);
@@ -69,20 +75,38 @@ blockquote, dd, dl, figure, h1, h2, h3, h4, h5, h6, hr, p, pre {
     }
 }
 
+/* Skip Button Style (Minecraft-inspired button) */
 .skip-button {
     position: absolute;
     bottom: 5%;
-    background-color: red;
+    background-color: #ff0000;
     color: white;
     padding: 10px 20px;
-    border: none;
+    border: 2px solid #e00000;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 1vw;
+    font-family: 'Minecraft', 'Arial', sans-serif;
+    text-transform: uppercase;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
 }
 
 .skip-button:hover {
-    background-color: darkred;
+    background-color: #cc0000;
+    border-color: #a00000;
 }
+
+.skip-button:focus {
+    outline: none;
+}
+
+/* Credits text scroll with Minecraft aesthetic */
+.credits-content p {
+    font-size: 1.2vw;
+    line-height: 1.6vw;
+    letter-spacing: 0.05vw;
+}
+
 
 
 .error {
