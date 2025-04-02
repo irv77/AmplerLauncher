@@ -63,9 +63,12 @@
                 <p>Mobile/Controller </p>
             </div>
         </div>
-        <div id="gtabs5" class="sidebarOptions sidebarBottom" onclick="errorNA()">
-            <img src="./images/m-credits.png" alt><div class="gTabsText"><p> Credits</p></div>
-        </div>
+<div id="gtabs5" class="sidebarOptions sidebarBottom" onclick="showCredits()">
+    <img src="./images/m-credits.png" alt>
+    <div class="gTabsText">
+        <p> Credits</p>
+    </div>
+</div>
         <div id="gtabs6" class="sidebarOptions sidebarBottom" onclick="errorNA()">
             <img src="./images/m-settings.png" alt><div class="gTabsText"><p> Settings</p></div>
         </div>
@@ -264,10 +267,30 @@
             </div>
             <a id="playbutton" href="mc/1.12.2"><div id="mainbutton" class="playButton"></div></a>
             <div class="username centeredIcon bolded">
-                <p class="usernameText">Generic User</p>
+                <p class="usernameText">Ampler User</p>
             </div>
         </div>
     </div>
-    <script src="./js/index.js"></script>
+    <script src="./js/index.js"></script> 
+<div id="creditsScreen" class="credits-container" style="display: none;">
+    <div class="credits-content">
+        <h1>AMPLER LAUNCHER CREDITS</h1>
+        <p>Developed by: <strong>irv77</strong></p>
+        <p>Designed by: <strong>irv77</strong></p>
+        <p>Hosted by: <strong>Github Pages</strong></p>
+        <br>
+        <p style="text-align: center;">Thank you for Using!</p>
+    </div>
+    <button class="skip-button" onclick="hideCredits()">CLOSE</button>
+</div>
+<script>
+    function showCredits() {
+        document.getElementById("creditsScreen").style.display = "block";
+    }
+
+    function hideCredits() {
+        document.getElementById("creditsScreen").style.display = "none";
+    }
+</script>
 </body>
 </html>

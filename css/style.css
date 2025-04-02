@@ -37,6 +37,107 @@ blockquote, dd, dl, figure, h1, h2, h3, h4, h5, h6, hr, p, pre {
     font-weight: 800;
 }
 
+/* above the brand new added section by @MR_Pokkkie*/
+
+.credits-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./images/web-edition'); 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Minecraft', sans-serif; 
+    text-align: center;
+    z-index: 9999;
+    flex-direction: column;
+    padding: 2vw;
+    box-sizing: border-box;
+    filter: brightness(0.8);
+    animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.credits-content {
+    width: 80%;
+    max-width: 600px;
+    animation: scrollCredits 10s linear infinite;
+    font-size: 2vw;
+    letter-spacing: 0.1vw;
+    background: rgba(0, 0, 0, 0.5); 
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8); 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-weight: bold;
+    animation: scrollCredits 10s linear infinite;
+    text-align: center;
+}
+
+
+@keyframes scrollCredits {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(-100%);
+    }
+}
+
+
+.skip-button {
+    position: absolute;
+    bottom: 5%;
+    background-color: #ff4c4c;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5vw;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+.skip-button:hover {
+    background-color: #e53939;
+    transform: scale(1.1);
+}
+
+
+@media (max-width: 768px) {
+    .credits-content {
+        font-size: 4vw;
+    }
+    .skip-button {
+        font-size: 5vw;
+        padding: 10px 20px;
+    }
+}
+
+
+body {
+    font-family: 'Minecraft', sans-serif; 
+}
+
+
+/* above the brand new added section by @MR_Pokkkie*/
+
+
 .error {
     display: none;
     position: absolute;
