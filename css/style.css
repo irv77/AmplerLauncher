@@ -400,6 +400,9 @@ body {
 .dropdown8 {bottom: 0;}
 .dropdown9 {bottom: 5vw;}
 .dropdown10 {bottom: 10vw;}
+.dropdown11 {bottom: 10vw;}
+.dropdown12 {bottom: 15vw;}
+.dropdown13 {bottom: 20vw;}
 
 .zoom-out {
     animation: zoomed 0.2s linear forwards;

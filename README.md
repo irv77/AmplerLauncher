@@ -1,4 +1,4 @@
-# <img src=".github/assets/logo.png" alt="Ampler Logo" align="right" width="175px"> Ampler Launcher v1.1.00
+# <img src=".github/assets/logo.png" alt="Ampler Logo" align="right" width="175px"> Ampler Launcher v1.2.00
  A minecraft themed launcher for Eaglercraft!<br>
  Containing some of the best clients all in one place!
 
@@ -8,7 +8,8 @@
 <hr>
 
  ## Versions
- __v1.1.00__ - Updated code and optimized!
+ __v1.2.00__ - Updated games.<br>
+ __v1.1.00__ - Updated code and optimized!<br>
  __v1.0.00__ - Main code with future updates planned!
 
  <hr>
