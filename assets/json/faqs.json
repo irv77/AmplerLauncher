@@ -1,0 +1,18 @@
+[
+    {
+       "question": "Will there be a offline download?",
+       "answer": "Possibly once developement is done."
+    },
+    {
+       "question": "How often are the launcher options updated?",
+       "answer": "Whenever the next big update is."
+    },
+    {
+       "question": "How can I contribute?",
+       "answer": "You can join my discord server to give suggestions or to help add code."
+    },
+    {
+       "question": "Can I use your code?",
+       "answer": "Yes, but PLEASE credit if you do copy my code."
+    }
+]

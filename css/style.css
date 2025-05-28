@@ -1,5 +1,7 @@
-*, ::after, ::before {
-    box-sizing: border-box;
+/* General CSS */
+::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
 }
 
 html {
@@ -21,21 +23,29 @@ body {
     line-height: inherit;
     overflow: hidden;
     height: 100%;
+    font-family: 'Roboto', sans-serif;
 }
 
-menu, ol, ul {
+ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-blockquote, dd, dl, figure, h1, h2, h3, h4, h5, h6, hr, p, pre {
+h1, h2, h3, h4, h5, h6, hr, p {
     margin: 0;
+}
+
+hr {
+    border: 0.1vh solid #353535;
+    width: 74vw;
 }
 
 .bolded {
     font-weight: 800;
 }
+
+/* Error CSS */
 
 .error {
     display: none;
@@ -45,7 +55,7 @@ blockquote, dd, dl, figure, h1, h2, h3, h4, h5, h6, hr, p, pre {
     padding: 0.5vw 1vw;
     margin: 1vw 0.5vw;
     background: rgba(0, 0, 0, 0.25);
-    border-radius: 2.5vw;
+    border-radius: 1.5vw;
     font-style: italic;
     transition: 0.3s;
     animation: drop .5s linear forwards;
@@ -53,29 +63,99 @@ blockquote, dd, dl, figure, h1, h2, h3, h4, h5, h6, hr, p, pre {
 }
 
 #naerror {
-    display: none;
     color: gold;
-    border: gold solid 0.2vw;
+    border: gold solid 0.1vw;
 }
 
 #screenerror {
     right: 35%;
     padding: 0.25vw 4vw;
-    display: none;
     color: darkred;
     font-size: 1vw;
     border: red solid 0.1vw;
 }
 
+.zoom-out {
+    animation: zoomed 0.2s linear forwards;
+}
+
+@keyframes zoomed {
+    100% {
+        transform: translateY(10px) scale(0);
+        display: none;
+    }
+}
+
+/* Sidebar CSS */
+
+.sidebar {
+    height: 100vh;
+    width: 16vw;
+    color: white;
+    background-color: #1e1e1e;
+}
+
+.sidebarOptions {
+    display: flex;
+    height: 5vw;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.5vw;
+    padding-left: 1.5vw;
+    font-size: 0.9vw;
+    line-height: 1.5vw;
+    transition: 0.3s;
+}
+
+.sidebarOptions:hover {
+    cursor: pointer;
+    background-color: #353535;
+}
+
+.sidebarOptions.sidebarBottom {
+    position: absolute;
+}
+
+.sidebarOptions.selected {
+    font-weight: 700; 
+    border-left: 0.4vw solid #008542;
+}
+
+#gtabs1 img {width: 3vw;}
+#gtabs2 img, #gtabs3 img, #gtabs4 img {width: 2.5vw;}
+#gtabs5 {bottom: 7.5vw; width: 14.5vw;}
+#gtabs6 {bottom: 2.5vw; width: 14.5vw;}
+#gtabs5 img, #gtabs6 img {width: 2vw;}
+
+.eaglercraftText {
+    font-size: 1.1vw;
+}
+
+.launcherVersion {
+    position: absolute;
+    bottom: 0.25vw;
+    left: 1.25vw;
+    right: 0;
+    z-index: 1;
+    font-size: 1.1vw;
+    color: #cccccc;
+    width: fit-content;
+}
+
+/* Header CSS */
+
+.mainPage {
+    width: 84vw;
+    color: white;
+    background-color: #1e1e1e;
+}
+
+.gameHeader {padding: 1.8vw 1.8vw 0;}
+.currentGame {font-size: 1.2vw;}
+
 .gameTabs {
     display: flex;
     align-items: center;
-}
-
-.mainPage {
-    width: 100%;
-    color: white;
-    background-color: #1e1e1e;
 }
 
 .headerButtons {
@@ -91,57 +171,46 @@ blockquote, dd, dl, figure, h1, h2, h3, h4, h5, h6, hr, p, pre {
     color: white
 }
 
-.headerButtonSelected {
+.headerButtons.selected {
     cursor: default;
-    padding: 0.6vw 1.1vw;
     color: white;
     font-weight: 800;
     border-bottom: #008542 solid 0.21vw;
-    font-size: 0.95vw;
-    line-height: 1.7vw;
 }
 
-.gameBg {
+/* Body CSS */
+
+#game-bg {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     position: absolute;
     display: flex;
-    width: 100%;
-    height: 100%;
+    width: 84vw;
+    height: 84vh;
     justify-content: center;
 }
 
-.gameLogo {
-    position: absolute;
-    left: 23%;
-    width: 100%;
-    top: 6%;
+#game-title {
+    width: 40vw;
+    height: 6.5vw;
+    margin-top: 6vw;
     animation: drop .5s linear forwards;
-    color: purple;
 }
 
-.gameSelection {
+#gameSelection {
     position: absolute;
     bottom: 0;
-    width: 100%;
+    width: 84vw;
     height: 4.5vw;
     justify-content: space-around;
     display: flex;
     background-color: #1e1e1e;
 }
 
-.versionSelector {
-    display: flex;
+.dropdownSelector {
     position: absolute;
     left: 1vw;
-    bottom: 0;
-    top: 0;
-    align-items: center;
-}
-
-.dropdownSelector {
-    position: relative;
     display: flex;
     height: 4.5vw;
     width: 27vw;
@@ -156,69 +225,26 @@ blockquote, dd, dl, figure, h1, h2, h3, h4, h5, h6, hr, p, pre {
     background-color: #353535;
 }
 
-.dropdownIcon {
-    color: white;
-    width: 1.75vw;
-}
-
-.dropdownMenu {
-    position: absolute;
-    left: 1vw;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.dropdownOptions {
-    position: absolute;
-    display: flex;
-    height: 5vw;
-    width: 27vw;
-    align-items: center;
-    color: white;
-    background-color: #131313;
-    z-index: 999;
-    font-size: 1.1vw;
-}
-
-.dropdownOptions:hover {
-    background-color: #008542;
-}
-
-.dropdownOption {
-    position: absolute;
-    left: 2vw;
-    display: flex;
-    gap: 1vw;
-}
-
-.dropdownOptionText {
-    display: grid;
-    align-items: center;
-    justify-content: flex-start;
-}
-
 .centeredIcon {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.versionText {
-    margin-right: 4.25vw;
-    display: grid;
-    align-items: center;
-    justify-content: flex-start;
-    font-size: 1.1vw;
+.dropdownIcon {
+    color: white;
+    width: 1.75vw;
 }
 
 .playButton {
     position: absolute;
-    left: 33%;
+    left: 32vw;
     bottom: 0.5vw;
     display: flex;
     align-items: center;
     width: 21.5vw;
     height: 5vw;
-    background-image: url(../images/play.png);
+    background-image: url(../assets/images/play.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -227,95 +253,17 @@ blockquote, dd, dl, figure, h1, h2, h3, h4, h5, h6, hr, p, pre {
 
 .playButton:hover {
     cursor: pointer;
-    background-image: url(../images/play-hover.png);
+    background-image: url(../assets/images/play-hover.png);
     transform: scale(1.05);
 }
 
 .username {
     position: absolute;
-    bottom: 0;
-    right: 17vw;
     top: 0;
-}
-
-.usernameText {
+    bottom: 0;
+    right: 3vw;
     font-size: 1.35vw;
 }
-
-.sidebar {
-    position: relative;
-    float: left;
-    height: 100vh;
-    width: 18vw;
-    color: white;
-    background-color: #1e1e1e;
-}
-
-.eaglercraftText {
-    font-size: 1.1vw;
-}
-
-.sidebarOptions {
-    display: flex;
-    height: 5vw;
-    width: 100%;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 1.5vw;
-    padding-left: 1.5vw;
-    font-size: 1vw;
-    line-height: 1.5vw;
-    transition: 0.3s;
-}
-
-.sidebarOptions:hover {
-    cursor: pointer;
-    background-color: #353535;
-}
-
-.sidebarOptions.sidebarBottom {
-    position: absolute;
-}
-
-.launcherVersion {
-    position: absolute;
-    bottom: 0.25vw;
-    left: 0;
-    right: 0;
-    padding-left: 1.25vw;
-    z-index: 1;
-    font-size: 1.1vw;
-    color: #cccccc;
-}
-.gameHeader {    padding: 1.8vw 1.8vw 0;}
-
-.dropdown1 {bottom: 0;}
-.dropdown2 {bottom: 5vw;}
-.dropdown3 {bottom: 0vw;}
-.dropdown4 {bottom: 5vw; }
-.dropdown5 {bottom: 10vw;}
-.dropdown6 {bottom: 15vw;}
-.dropdown7 {bottom: 20vw;}
-.dropdown8 {bottom: 0;}
-.dropdown9 {bottom: 5vw;}
-.dropdown10 {bottom: 10vw;}
-.dropdown11 {bottom: 10vw;}
-.dropdown12 {bottom: 15vw;}
-.dropdown13 {bottom: 20vw;}
-
-.zoom-out {
-    animation: zoomed 0.2s linear forwards;
-}
-
-.currentGame {
-    font-size: 1.2vw;
-}
-
-#gtabs1 img {width: 3vw;}
-#gtabs2 img, #gtabs3 img, #gtabs4 img {width: 2.5vw;}
-#gtabs5 {bottom: 7.5vw;}
-#gtabs6 {bottom: 2.5vw;}
-#gtabs5 img, #gtabs6 img {width: 2vw;}
 
 @keyframes drop {
     0% {
@@ -348,9 +296,161 @@ blockquote, dd, dl, figure, h1, h2, h3, h4, h5, h6, hr, p, pre {
     }
 }
 
-@keyframes zoomed {
-    100% {
-        transform: translateY(10px) scale(0);
-        display: none;
-    }
+/* FAQ Menu CSS */
+
+#faq {
+    position: absolute;
+    display: none;
+    width: 84vw;
+    height: 91vh;
+    flex-direction: column;
+    align-items: center;
+    background-color: #131313;
+    overflow-y: scroll;
+    font-size: 1.3vw;
+}
+
+.faqtitle {
+    font-size: 2.3vw;
+    padding-top: 3vh;
+}
+
+#faqbox {
+    display: flex;
+    flex-direction: column;
+    padding: 5vh 11vw 7vh;
+    width: -webkit-fill-available;
+}
+
+.faqoption {
+    margin-bottom: 3vh;
+}
+
+.faqtext {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+}
+
+.faqsymbol {
+    font-size: 2vw;
+}
+
+/* Installations Menu CSS */
+
+#installations {
+    position: absolute;
+    display: none;
+    width: 84vw;
+    height: 91vh;
+    flex-direction: column;
+    align-items: center;
+    background-color: #131313;
+    overflow-y: scroll;
+}
+
+#installationsbox {
+    display: flex;
+    flex-direction: column;
+    padding: 5vh 0 7vh;
+}
+
+.installationOptions {
+    display: flex;
+    height: 9vh;
+    width: 74vw;
+    align-items: center;
+    color: white;
+    font-size: 1.2vw;
+}
+
+.installationOptions:hover, .installationBox:hover {
+    background-color: #353535;
+}
+
+.installationOption {
+    position: absolute;
+    left: 7vw;
+    display: flex;
+    gap: 2vw;
+    align-items: center;
+}
+
+.installationBox {
+    width: 3.5vh;
+    height: 3.5vh;
+    appearance: none;
+    border: 0.3vw solid #0c6e3d;
+    background-color: #131313;
+    cursor: pointer;
+}
+
+.installationBox:checked {
+  background-color: #008542;
+}
+
+.installationBox:checked:hover {
+    background-color: #0f9a54;
+}
+
+.installationOption img {
+    width: 5.5vh;
+    height: 5.5vh;
+}
+
+.installationOptionText {
+    display: grid;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Dropdown Menu CSS */
+
+.dropdownMenu {
+    position: absolute;
+    left: 1vw;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dropdownOptions {
+    position: absolute;
+    display: flex;
+    height: 5vw;
+    width: 27vw;
+    align-items: center;
+    color: white;
+    background-color: #131313;
+    z-index: 999;
+    font-size: 1.1vw;
+}
+
+.dropdownOptions:hover {
+    background-color: #008542;
+}
+
+.dropdownOption {
+    position: absolute;
+    left: 2vw;
+    display: flex;
+    gap: 0.5vw;
+    align-items: center;
+}
+
+.dropdownOption img {
+    width: 2.5vw;
+    height: 2.5vw;
+}
+
+.dropdownOptionText {
+    display: grid;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.versionText {
+    margin-right: 4.25vw;
+    display: grid;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1.1vw;
 }
