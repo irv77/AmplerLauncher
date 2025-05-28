@@ -22,19 +22,19 @@ function generateprofile(game) {
     let selectedGame = "";
     let running = false;
     if (!selectedGame1) {
-        fetch("/assets/json/base.json").then((response) => response.json()).then((data) => {
+        fetch("./assets/json/base.json").then((response) => response.json()).then((data) => {
             selectedGame1 = JSON.stringify(data[0]); localStorage.setItem("basegame", selectedGame1);
         });
     };
     if (game === 1 && selectedGame1) {selectedGame = JSON.parse(selectedGame1);  running = true;}; 
     if (!selectedGame2) {
-        fetch("/assets/json/modded.json").then((response) => response.json()).then((data) => {
+        fetch("./assets/json/modded.json").then((response) => response.json()).then((data) => {
             selectedGame2 = JSON.stringify(data[0]); localStorage.setItem("moddedgame", selectedGame2);
         });
     };
     if (game === 2 && selectedGame2) {selectedGame = JSON.parse(selectedGame2);  running = true;}; 
     if (!selectedGame3) {
-        fetch("/assets/json/assisted.json").then((response) => response.json()).then((data) => {
+        fetch("./assets/json/assisted.json").then((response) => response.json()).then((data) => {
             selectedGame3 = JSON.stringify(data[0]); localStorage.setItem("assisted", selectedGame3);
         });
     };
@@ -64,9 +64,9 @@ function generategames(path) {
                 document.getElementById('gameversion').innerHTML = game.version;
                 document.getElementById('gameicon').src = game.icon;
                 document.getElementById('playbutton').href = game.link;
-                if (path === "/assets/json/base.json") {selectedGame1 = JSON.stringify(game); localStorage.setItem("basegame", selectedGame1)};
-                if (path === "/assets/json/modded.json") {selectedGame2 = JSON.stringify(game); localStorage.setItem("moddedgame", selectedGame2)};
-                if (path === "/assets/json/assisted.json") {selectedGame3 = JSON.stringify(game); localStorage.setItem("assisted", selectedGame3)};
+                if (path === "./assets/json/base.json") {selectedGame1 = JSON.stringify(game); localStorage.setItem("basegame", selectedGame1)};
+                if (path === "./assets/json/modded.json") {selectedGame2 = JSON.stringify(game); localStorage.setItem("moddedgame", selectedGame2)};
+                if (path === "./assets/json/assisted.json") {selectedGame3 = JSON.stringify(game); localStorage.setItem("assisted", selectedGame3)};
                 dropdowntoggle();
             });
         
@@ -151,7 +151,7 @@ function generatelaunchers(path) {
 
 const faqs = document.getElementById("faqbox");
 function generatefaqs() {
-    fetch("/assets/json/faqs.json").then((response) => response.json()).then((data) => {
+    fetch("./assets/json/faqs.json").then((response) => response.json()).then((data) => {
         data.forEach((game) => {
             const faqoption = document.createElement("div");
             faqoption.className = "faqoption";
@@ -185,9 +185,9 @@ function generatefaqs() {
 };
 
 // Game Edition Selected
-let launcher = "/assets/json/base.json";
+let launcher = "./assets/json/base.json";
 function webedition(){
-    launcher = "/assets/json/base.json";
+    launcher = "./assets/json/base.json";
     resetTabSelected();
     generateprofile(1);
     generategames(launcher);
@@ -199,7 +199,7 @@ function webedition(){
     document.getElementById('gtabs2').classList.add('selected');
 }
 function moddededition(){
-    launcher = "/assets/json/modded.json";
+    launcher = "./assets/json/modded.json";
     resetTabSelected();
     generateprofile(2);
     generategames(launcher);
@@ -211,7 +211,7 @@ function moddededition(){
     document.getElementById('gtabs3').classList.add('selected');
 }
 function eaglercontrols(){
-    launcher = "/assets/json/assisted.json";
+    launcher = "./assets/json/assisted.json";
     resetTabSelected();
     generateprofile(3);
     generategames(launcher);
@@ -304,7 +304,7 @@ if (userchosen === false && !localStorage.getItem("username")) {
 else {username.innerHTML = localStorage.getItem("username")}
 
 generateprofile(1);
-generategames("/assets/json/base.json");
+generategames("./assets/json/base.json");
 generatefaqs();
-generatelaunchers("/assets/json/base.json");
+generatelaunchers("./assets/json/base.json");
 console.clear();

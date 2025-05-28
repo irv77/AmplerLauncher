@@ -2,21 +2,21 @@
     {
        "title": "FlamedDogo's Mobile UI",
        "version": "1.8.8-v3.0.5b",
-       "icon": "/assets/images/icons/dogos-mobile.png",
+       "icon": "./assets/images/icons/dogos-mobile.png",
        "link": "./mc/mc/1.8.8/?userscript=flameddogo99-eaglermobile.js",
        "active": true
     },
     {
        "title": "Red's Mobile UI",
        "version": "1.8.8-v1.40",
-       "icon": "/assets/images/icons/reds-mobile.png",
+       "icon": "./assets/images/icons/reds-mobile.png",
        "link": "./mc/1.8.8/?userscript=irv77-eaglercraft-mobile.js",
        "active": true
     },
     {
        "title": "Red's Controller Support",
        "version": "1.8.8-v1.1",
-       "icon": "/assets/images/icons/reds-controller.png",
+       "icon": "./assets/images/icons/reds-controller.png",
        "link": "./mc/?userscript=irv77-eaglerconsole.js",
        "active": true
     }
