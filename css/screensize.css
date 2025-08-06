@@ -99,6 +99,30 @@ hr {
   font-size: 1.5vw;
 }
 
+/* Mods Menu CSS */
+
+#mods {
+    width: 94.5vw;
+}
+
+.modoption {
+  width: 15vw;
+}
+
+.moddetails {
+    font-size: 1.2vw;
+}
+
+.modtitle {
+    font-size: 1.4vw;
+}
+
+/* FAQ Menu CSS */
+
+#faq {
+    width: 94.5vw;
+}
+
 /* Installations Menu CSS */
 
 #installations {
@@ -109,6 +133,29 @@ hr {
     height: 9vh;
     width: 84vw;
     font-size: 1.4vw;
+}
+
+/* Patch Notes Menu CSS */
+
+#patchNotes {
+    width: 94.5vw;
+}
+
+.patchnotes-title {
+    font-size: 1.6vw;
+}
+
+.versionBox {
+    width: 2vw;
+    height: 2vw;
+}
+
+.patchnote {
+    width: 16vw;
+}
+
+.notescreendetails {
+    width: 85vw;
 }
 
 /* Dropdown Menu CSS */

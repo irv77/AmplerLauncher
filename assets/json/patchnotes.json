@@ -1,0 +1,101 @@
+[
+    {
+        "title": "Site Update: Modded",
+        "version": "v1.4.00",
+        "description": "Added patch notes, bug fixes, and integrated mods!",
+        "date": "Tuesday, August 5th, 2025",
+        "icon": "mod-icons/grappling-gun.png",
+        "type": "site",
+        "notes": [
+            "Added the mod screen, which allows users to select mods, and it'll be added to their eaglerforge launcher. Will override mods added in by user inside of launcher.",
+            "Added the patch notes screen, it displays recent updates to the website, and launcher builds.",
+            "Fixed a bug of unable to scroll with to many launchers selected.",
+            "Fixed sizing bugs of website."
+        ]
+    },
+    {
+        "title": "Site Update: Memorized",
+        "version": "v1.3.10",
+        "description": "Organized/updated code, added memory options, more games, installations, usernames, and faq screen!",
+        "date": "Monday, May 28th, 2025",
+        "icon": "mc-icons/red-bed.png",
+        "type": "site",
+        "notes": [
+            "Implemented memory for options selected inside of launcher.",
+            "Added wider range of game versions.",
+            "Added usernames into launcher.",
+            "Added FAQ screen, answering common easy questions.",
+            "Removed bulk code for sleeker function/look.",
+            "Organize structure of project for future growth."
+        ]
+    },
+    {
+        "title": "Eaglercraft 1.12",
+        "version": "u2",
+        "description": "Come back soon for full log!",
+        "date": "Unknown",
+        "icon": "icons/eaglercraft.png",
+        "type": "game",
+        "notes": []
+    },
+    {
+        "title": "Eaglercraft 1.8.8",
+        "version": "u51",
+        "description": "Come back soon for full log!",
+        "date": "Unknown",
+        "icon": "icons/eaglercraft.png",
+        "type": "game",
+        "notes": []
+    },
+    {
+        "title": "Site Update: W.A.S.M.",
+        "version": "v1.2.00",
+        "description": "Come back soon for full log!",
+        "date": "Tuesday, April 1st, 2025",
+        "icon": "mc-icons/grass-wasm.png",
+        "type": "site",
+        "notes": []
+    },
+    {
+        "title": "Site Update: CYA CSS",
+        "version": "v1.1.00",
+        "description": "Come back soon for full log!",
+        "date": "Wednesday, November 13th, 2024",
+        "icon": "mc-icons/skull.png",
+        "type": "site",
+        "notes": []
+    },
+    {
+        "title": "Site Roadmap",
+        "version": "v1.4.00",
+        "description": "Current progress on the future of Ampler Launcher!",
+        "date": "Tuesday, August 5th, 2025",
+        "icon": "icons/roadmap.png",
+        "type": "site",
+        "notes": [
+            "✘ Add the servers screen",
+            "✘ Add Credits screen",
+            "✘ Add Settings screen",
+            "✔ Rewrite some of the css and js",
+            "✔ Organize code, and add comments",
+            "✘ Add a customizable launcher selector",
+            "✔ Save last played game",
+            "✔ Add FAQ screen",
+            "✔ Add Installations screen",
+            "✔ Add Mods screen",
+            "✘ Add Skins screen",
+            "✔ Add Patch Notes screen",
+            "✘ Fix display errors",
+            "✘ Offline launcher download?"
+        ]
+    },
+    {
+        "title": "Ampler Launcher Release",
+        "version": "v1.0.00",
+        "description": "Come back soon for full log!",
+        "date": "Saturday, July 17th, 2024",
+        "icon": "logo.png",
+        "type": "site",
+        "notes": []
+    }
+]

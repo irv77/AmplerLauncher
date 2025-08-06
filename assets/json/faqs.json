@@ -14,5 +14,9 @@
     {
        "question": "Can I use your code?",
        "answer": "Yes, but PLEASE credit if you do copy my code."
+    },
+    {
+       "question": "How do I add my own mod to the modketplace?",
+       "answer": "You can suggest your mod in my discord server and it might be added."
     }
 ]

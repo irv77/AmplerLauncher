@@ -1,4 +1,18 @@
 function initAPI(version) {
+  //AUTOMATIC MOD ADDER  
+  if (localStorage.getItem("modslauncher")) {
+    localStorage.setItem("ml::Mods", "[]");
+    var Mods = JSON.parse(localStorage.getItem("ml::Mods"));
+    JSON.parse(localStorage.getItem("modslauncher")).forEach(item => {
+      fetch("mods/" + item).then((res) => res.text()).then((text) => {
+        var newMod = "data:text/javascript;fs=" + item + ";base64," + btoa(text);
+        Mods.push(newMod);
+        localStorage.setItem("ml::Mods", JSON.stringify(Mods));
+        console.log("%cMOD(S) ADDED!", "font-size: 32px; font-weight: bold; color: blue;");
+      });
+    });
+  };
+
   var ModAPI = {};
   ModAPI.events = {};
   ModAPI.events.types = ["event"];

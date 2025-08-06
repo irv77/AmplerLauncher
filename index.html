@@ -19,6 +19,7 @@
 </head>
 
 <body>
+    <div id="notescreen"></div>
     <div id="naerror" class="error">
         <div>
             <p style="margin-left: 1vw;" class="bolded">SORRY!</p>
@@ -62,19 +63,24 @@
         <div id="gtabs6" class="sidebarOptions sidebarBottom" onclick="errorNA('settings')">
             <img src="./assets/images/sidebar/m-settings.png"><div class="gTabsText"><p> Settings</p></div>
         </div>
-        <div class="launcherVersion"><p>v1.3.10</p></div>
+        <div class="launcherVersion"><p>v1.4.00</p></div>
     </div>
     <div class="mainPage">
         <div class="gameHeader">
             <p id="gameedition" class="currentGame bolded">EAGLERCRAFT WEB EDITION</p>
                 <ul class="gameTabs">
                     <li id="header1" class="headerButtons selected" onclick="playheader()">Play</li>
-                    <li id="header2" style="display: none;" class="headerButtons" onclick="errorNA('mods')">Mods</li>
+                    <li id="header2" style="display: none;" class="headerButtons" onclick="modsheader()">Mods</li>
                     <li id="header3" class="headerButtons" onclick="faqsheader()">FAQ</li>
                     <li id="header4" class="headerButtons" onclick="installationheader()">Installations</li>
                     <li id="header5" class="headerButtons" onclick="errorNA('skins')">Skins</li>
-                    <li id="header6" class="headerButtons" onclick="errorNA('patch notes')">Patch Notes</li>
+                    <li id="header6" class="headerButtons" onclick="patchnotesheader()">Patch Notes</li>
                 </ul>
+        </div>
+        <div id="mods">
+            <img class="modketplace-title" src="./assets/images/modketplace-title.png" alt="modketplace">
+            <p class="bolded modssubtitle">Community mods for the EaglerForge Installation.</p>
+            <div id="modsbox"></div>
         </div>
         <div id="faq">
             <p class="bolded faqtitle">Frequently Asked Questions</p>
@@ -84,6 +90,16 @@
         <div id="installations"><div id="installationsbox"></div></div>
         <div id="game-bg" style="background-image: url(./assets/images/web-edition.jpg);">
             <img id="game-title" src="./assets/images/web-title.png" alt="eaglercraft">
+        </div>
+        <div id="patchNotes">
+            <div style="padding: 2vh 3vw 7vh;">
+                <p class="bolded patchnotes-title">Versions</p>
+                <div class="versionscontainer">
+                    <input class="versionBox" type="checkbox" onchange="sortnote('game')" checked><p>Game Releases</p><input class="versionBox" type="checkbox" onchange="sortnote('site')" checked><p>Site Releases</p>
+                </div>
+                <hr>
+                <div id="patchnotesbox"></div>
+            </div>
         </div>
         <div id="gameSelection">
                 <div class="dropdownSelector" onclick="dropdowntoggle()">

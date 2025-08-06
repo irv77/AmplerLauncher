@@ -17,6 +17,7 @@ html {
 body {
     position: relative;
     display: flex;
+    color: white;
     align-items: flex-start;
     background-color: #303030;
     margin: 0;
@@ -24,6 +25,12 @@ body {
     overflow: hidden;
     height: 100%;
     font-family: 'Roboto', sans-serif;
+    --ui-main-lighter: #514d4c;
+    --ui-main-light: #353535;
+    --ui-main: #1e1e1e;
+    --ui-main-dark: #131313;
+    --text-secondary: #cccccc;
+    --ui-select: #008542;
 }
 
 ul {
@@ -37,7 +44,7 @@ h1, h2, h3, h4, h5, h6, hr, p {
 }
 
 hr {
-    border: 0.1vh solid #353535;
+    border: 0.1vh solid var(--ui-main-light);
     width: 74vw;
 }
 
@@ -91,8 +98,7 @@ hr {
 .sidebar {
     height: 100vh;
     width: 16vw;
-    color: white;
-    background-color: #1e1e1e;
+    background-color: var(--ui-main);
 }
 
 .sidebarOptions {
@@ -109,7 +115,7 @@ hr {
 
 .sidebarOptions:hover {
     cursor: pointer;
-    background-color: #353535;
+    background-color: var(--ui-main-light);
 }
 
 .sidebarOptions.sidebarBottom {
@@ -118,7 +124,7 @@ hr {
 
 .sidebarOptions.selected {
     font-weight: 700; 
-    border-left: 0.4vw solid #008542;
+    border-left: 0.4vw solid var(--ui-select);
 }
 
 #gtabs1 img {width: 3vw;}
@@ -138,7 +144,7 @@ hr {
     right: 0;
     z-index: 1;
     font-size: 1.1vw;
-    color: #cccccc;
+    color: var(--text-secondary);
     width: fit-content;
 }
 
@@ -146,8 +152,7 @@ hr {
 
 .mainPage {
     width: 84vw;
-    color: white;
-    background-color: #1e1e1e;
+    background-color: var(--ui-main);
 }
 
 .gameHeader {padding: 1.8vw 1.8vw 0;}
@@ -160,7 +165,7 @@ hr {
 
 .headerButtons {
     padding: 0.6vw 1.1vw;
-    color: #cccccc;
+    color: var(--text-secondary);
     font-size: 0.95vw;
     line-height: 1.7vw;
     transition: 0.3s;
@@ -175,7 +180,7 @@ hr {
     cursor: default;
     color: white;
     font-weight: 800;
-    border-bottom: #008542 solid 0.21vw;
+    border-bottom: var(--ui-select) solid 0.21vw;
 }
 
 /* Body CSS */
@@ -205,7 +210,7 @@ hr {
     height: 4.5vw;
     justify-content: space-around;
     display: flex;
-    background-color: #1e1e1e;
+    background-color: var(--ui-main);
 }
 
 .dropdownSelector {
@@ -216,13 +221,12 @@ hr {
     width: 27vw;
     align-items: center;
     justify-content: space-around;
-    color: white;
     transition: 0.3s;
 }
 
 .dropdownSelector:hover {
     cursor: pointer;
-    background-color: #353535;
+    background-color: var(--ui-main-light);
 }
 
 .centeredIcon {
@@ -296,6 +300,76 @@ hr {
     }
 }
 
+/* Mods Menu CSS */
+
+#mods {
+    position: absolute;
+    display: none;
+    width: 84vw;
+    height: 91vh;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+}
+
+.modketplace-title {
+    margin: 4vh 0 1vh;
+    width: 58vw;
+}
+
+.modssubtitle {
+    font-size: 1.6vw;
+}
+
+#modsbox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5vw 1.5vw;
+    padding: 4vh 0 7vh;
+}
+
+.modoption {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    width: 18vw;
+    border: 0.5vw solid var(--ui-main);
+    transition: 0.1s;
+}
+
+.modoption:hover {
+    scale: 1.05;
+}
+
+.modoption img {
+    border: 0.3vw solid #AA0000;
+    image-rendering: pixelated;
+}
+
+.modoption.selected img {
+    border: 0.3vw solid #00AA00;
+}
+
+.modoption:hover img {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.moddetails {
+    background-color: var(--ui-main-lighter);
+    padding: 0.5vw;
+    height: -webkit-fill-available;
+    font-size: 1.3vw;
+}
+
+.modtitle {
+    font-size: 1.5vw;
+}
+
+.modauthor {
+    text-decoration: underline;
+}
+
 /* FAQ Menu CSS */
 
 #faq {
@@ -305,7 +379,7 @@ hr {
     height: 91vh;
     flex-direction: column;
     align-items: center;
-    background-color: #131313;
+    background-color: var(--ui-main-dark);
     overflow-y: scroll;
     font-size: 1.3vw;
 }
@@ -345,7 +419,7 @@ hr {
     height: 91vh;
     flex-direction: column;
     align-items: center;
-    background-color: #131313;
+    background-color: var(--ui-main-dark);
     overflow-y: scroll;
 }
 
@@ -360,12 +434,11 @@ hr {
     height: 9vh;
     width: 74vw;
     align-items: center;
-    color: white;
     font-size: 1.2vw;
 }
 
 .installationOptions:hover, .installationBox:hover {
-    background-color: #353535;
+    background-color: var(--ui-main-light);
 }
 
 .installationOption {
@@ -374,6 +447,7 @@ hr {
     display: flex;
     gap: 2vw;
     align-items: center;
+    cursor: pointer;
 }
 
 .installationBox {
@@ -381,12 +455,11 @@ hr {
     height: 3.5vh;
     appearance: none;
     border: 0.3vw solid #0c6e3d;
-    background-color: #131313;
-    cursor: pointer;
+    pointer-events: none;
 }
 
 .installationBox:checked {
-  background-color: #008542;
+  background-color: var(--ui-select);
 }
 
 .installationBox:checked:hover {
@@ -404,6 +477,122 @@ hr {
     justify-content: flex-start;
 }
 
+/* Patch Notes Menu CSS */
+
+#patchNotes {
+    position: absolute;
+    display: none;
+    width: 84vw;
+    height: 91vh;
+    flex-direction: column;
+    background-color: var(--ui-main-dark);
+    overflow-y: scroll;
+}
+
+.patchnotes-title {
+    font-size: 1.4vw;
+}
+
+.versionscontainer {
+    display: flex;
+    align-items: center;
+    gap: 0.5vw;
+    margin: 0.5vh 0 1.5vh;
+}
+
+.versionBox {
+    width: 2.5vh;
+    height: 2.5vh;
+    appearance: none;
+    border: 0.3vw solid #0c6e3d;
+    cursor: pointer;
+}
+
+.versionBox:checked {
+    background-color: var(--ui-select);
+}
+
+#patchnotesbox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5vw 1.5vw;
+    padding: 2vh;
+}
+
+.patchnote {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    width: 17vw;
+    background-color: black;
+    transition: 0.1s;
+}
+
+.patchnote:hover {
+    background-color: var(--ui-main);
+}
+
+.patchnote img {
+    margin: 0.5vw;
+    image-rendering: pixelated;
+}
+
+.patchnotedetails {
+    border-top: 0.1vh solid var(--ui-main-light);
+    padding: 0.5vw 1vw 1vw;
+    height: -webkit-fill-available;
+    font-size: 1.3vw;
+}
+
+#notescreen {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+    background: var(--ui-main);
+    width: 100vw;
+    height: 100vh;
+    user-select: text;
+}
+
+.notescreenheader {
+    display: flex;
+    align-items: center;
+    font-size: 1.5vw;
+    padding: 1.5vw;
+}
+
+.notescreenheader svg {
+    position: absolute;
+    cursor: pointer;
+    right: 1.5vw;
+    width: 3vw;
+    height: 3vw;
+}
+
+#notescreen hr {
+    width: 100vw;
+}
+
+.notescreendetails {
+    text-align: left;
+    width: 75vw;
+    margin: 3vh 0;
+    overflow-y: scroll;
+}
+
+.notescreendetails .date {
+    color: var(--text-secondary);
+    font-size: 1.1vw;
+}
+
+.notescreendetails ul {
+    list-style: revert;
+    padding: revert;
+}
+
 /* Dropdown Menu CSS */
 
 .dropdownMenu {
@@ -418,14 +607,13 @@ hr {
     height: 5vw;
     width: 27vw;
     align-items: center;
-    color: white;
-    background-color: #131313;
+    background-color: var(--ui-main-dark);
     z-index: 999;
     font-size: 1.1vw;
 }
 
 .dropdownOptions:hover {
-    background-color: #008542;
+    background-color: var(--ui-select);
 }
 
 .dropdownOption {

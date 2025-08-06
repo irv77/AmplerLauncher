@@ -17,6 +17,8 @@ function errorNA(text) {
 let selectedGame1 = localStorage.getItem("basegame");
 let selectedGame2 = localStorage.getItem("moddedgame");
 let selectedGame3 = localStorage.getItem("assisted");
+let modslauncher
+if (localStorage.getItem("modslauncher")) {modslauncher = JSON.parse(localStorage.getItem("modslauncher"))};
 
 function generateprofile(game) {
     let selectedGame = "";
@@ -44,6 +46,10 @@ function generateprofile(game) {
     document.getElementById('gameversion').innerHTML = selectedGame.version;
     document.getElementById('gameicon').src = selectedGame.icon;
     document.getElementById('playbutton').href = selectedGame.link;
+    }
+    if (!modslauncher) {
+        localStorage.setItem("modslauncher", "");
+        modslauncher = [];
     }
 };
 
@@ -95,6 +101,57 @@ function generategames(path) {
     })
 };
 
+const mods = document.getElementById("modsbox");
+function generatemods() {
+    fetch("./assets/json/mods.json").then((response) => response.json()).then((data) => {
+        data.forEach((mod) => {
+            const modoption = document.createElement("div");
+            modoption.className = "modoption";
+            modoption.addEventListener("click", () => {
+                if (localStorage.getItem(mod.title) === 'true') {
+                    mod.active = false; 
+                    localStorage.setItem(mod.title, mod.active); 
+                    modoption.classList.remove("selected"); 
+                    modslauncher = modslauncher.filter(obj => obj !== mod.link); 
+                    localStorage.setItem("modslauncher", JSON.stringify(modslauncher.filter(obj => obj !== mod.link))); 
+                    console.log("Off")
+                } 
+                else {
+                    mod.active = true; 
+                    localStorage.setItem(mod.title, mod.active); 
+                    modoption.classList.add("selected"); 
+                    modslauncher.push(mod.link); 
+                    localStorage.setItem("modslauncher", JSON.stringify(modslauncher)); 
+                    console.log("On")} 
+            });
+            if (localStorage.getItem(mod.title) === 'true') {
+                modoption.classList.add("selected");
+            }
+            const modoptionimg = document.createElement("img");
+            modoptionimg.src = mod.icon;
+
+            const moddetails = document.createElement("div");
+            moddetails.className = "moddetails";
+            const moddetailtitle = document.createElement("p");
+            moddetailtitle.className = "bolded modtitle";
+            moddetailtitle.innerHTML = mod.title;
+            const moddetailauthor = document.createElement("p");
+            moddetailauthor.className = "modauthor";
+            moddetailauthor.innerHTML = mod.author;
+            const moddetaildesc = document.createElement("p");
+            moddetaildesc.innerHTML = mod.description;
+
+            moddetails.appendChild(moddetailtitle);
+            moddetails.appendChild(moddetailauthor);
+            moddetails.appendChild(moddetaildesc);
+            modoption.appendChild(modoptionimg);
+            modoption.appendChild(moddetails);
+            mods.appendChild(modoption);
+        }
+        )
+    })
+};
+
 const installations = document.getElementById("installationsbox");
 function generatelaunchers(path) {
     fetch(path).then((response) => response.json()).then((data) => {
@@ -109,13 +166,9 @@ function generatelaunchers(path) {
             const gameinput = document.createElement("input");
             gameinput.className = "installationBox";
             gameinput.type = "checkbox";
-            gameinput.addEventListener("change", () => {
-                if (gameinput.checked) {game.active = true; localStorage.setItem(game.title, game.active)} 
-                else {game.active = false; localStorage.setItem(game.title, game.active)} 
-            });
             gameoption.addEventListener("click", () => {
-                if (gameinput.checked) {game.active = false; localStorage.setItem(game.title, game.active); gameinput.checked = ""} 
-                else {game.active = true; localStorage.setItem(game.title, game.active); gameinput.checked = "checked"} 
+                if (gameinput.checked) {game.active = false; localStorage.setItem(game.title, game.active); gameinput.checked = ""; console.log("Off")} 
+                else {game.active = true; localStorage.setItem(game.title, game.active); gameinput.checked = "checked"; console.log("On")} 
             });
             if (!localStorage.getItem(game.title)) {
                 localStorage.setItem(game.title, game.active);
@@ -184,6 +237,87 @@ function generatefaqs() {
     })
 };
 
+const notes = document.getElementById("patchnotesbox");
+const notescreen = document.getElementById("notescreen");
+function generatenotes() {
+    fetch("./assets/json/patchnotes.json").then((response) => response.json()).then((data) => {
+        data.forEach((note) => {
+            const patchnote = document.createElement("div");
+            patchnote.className = "patchnote";
+            patchnote.setAttribute('data-note-type', note.type);
+            patchnote.addEventListener("click", () => {
+                const notescreenheader = document.createElement("div");
+                notescreenheader.className = "bolded notescreenheader";
+                notescreenheader.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" onclick="closenotescreen()"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg>`
+                const notescreenheadertitle = document.createElement("p");
+                notescreenheadertitle.innerHTML = "Patch Notes " + note.title + " " + note.version;
+                const notescreenhr = document.createElement("hr");
+
+                const notescreendetails = document.createElement("div");
+                notescreendetails.className = "notescreendetails";
+                const notescreendate = document.createElement("p");
+                notescreendate.className = "date";
+                notescreendate.innerHTML = note.date;
+                const notescreendescription = document.createElement("p");
+                notescreendescription.className = "bolded notescreenheader";
+                notescreendescription.innerHTML = note.description;
+
+                const notescreenlist = document.createElement("ul");
+                note.notes.forEach((item) => {
+                    const noteitem = document.createElement("li");
+                    noteitem.innerHTML = item;
+                    notescreenlist.appendChild(noteitem);
+                });
+
+                notescreenheader.prepend(notescreenheadertitle);
+                notescreendetails.appendChild(notescreendate);
+                notescreendetails.appendChild(notescreendescription);
+                notescreendetails.appendChild(notescreenlist);
+                notescreen.appendChild(notescreenheader);
+                notescreen.appendChild(notescreenhr);
+                notescreen.appendChild(notescreendetails);
+                notescreen.style.display = "flex";
+            });
+
+            const patchnoteimg = document.createElement("img");
+            patchnoteimg.src = "./assets/images/" + note.icon;
+
+            const patchnotedetails = document.createElement("div");
+            patchnotedetails.className = "bolded patchnotedetails";
+            const notedetailtitle = document.createElement("p");
+            notedetailtitle.innerHTML = note.title;
+            const notedetailversion = document.createElement("p");
+            notedetailversion.innerHTML = note.version;
+
+            patchnotedetails.appendChild(notedetailtitle);
+            patchnotedetails.appendChild(notedetailversion);
+            patchnote.appendChild(patchnoteimg);
+            patchnote.appendChild(patchnotedetails);
+            notes.appendChild(patchnote);
+        }
+        )
+    })
+};
+
+// Patchnote Functions
+
+let gamenote = sitenote = true;
+function sortnote(type) {
+    if (type === "game") {
+        if (gamenote == true) { document.querySelectorAll('[data-note-type="game"]').forEach(element => {element.style.display = 'none';}); gamenote = false;}
+        else if (gamenote == false) { document.querySelectorAll('[data-note-type="game"]').forEach(element => {element.style.display = 'flex';}); gamenote = true;}
+    };
+    if (type === "site") {
+        if (sitenote == true) { document.querySelectorAll('[data-note-type="site"]').forEach(element => {element.style.display = 'none';}); sitenote = false; }
+        else if (sitenote == false) { document.querySelectorAll('[data-note-type="site"]').forEach(element => {element.style.display = 'flex';}); sitenote = true; }
+    };
+}
+
+function closenotescreen() {
+    notescreen.style.display = "none";
+    while (notescreen.firstChild) {notescreen.removeChild(notescreen.firstChild)};
+}
+
 // Game Edition Selected
 let launcher = "./assets/json/base.json";
 function webedition(){
@@ -232,17 +366,27 @@ function playheader(){
     document.getElementById('gameSelection').style.display = "flex";
     document.getElementById('header1').classList.add('selected');
 }
-
+function modsheader(){
+    resetHeaderSelected();
+    generatemods();
+    document.getElementById('mods').style.display = "flex";
+    document.getElementById('header2').classList.add('selected');
+}
 function faqsheader(){
     resetHeaderSelected();
     document.getElementById('faq').style.display = "flex";
     document.getElementById('header3').classList.add('selected');
 }
-
 function installationheader(){
     resetHeaderSelected();
     document.getElementById('installations').style.display = "flex";
     document.getElementById('header4').classList.add('selected');
+}
+function patchnotesheader(){
+    resetHeaderSelected();
+    generatenotes();
+    document.getElementById('patchNotes').style.display = "flex";
+    document.getElementById('header6').classList.add('selected');
 }
 
 // Dropdown game options toggle
@@ -266,18 +410,23 @@ function resetTabSelected() {
         gtabs.classList.remove('selected');
         headers.style.display = "block";
     };
+    playheader();
 }
 
 function resetHeaderSelected() {
     while (dropdown.firstChild) {dropdown.removeChild(dropdown.firstChild)};
-    for (var i = 1; i < 6; i++) { 
+    while (mods.firstChild) {mods.removeChild(mods.firstChild)};
+    while (notes.firstChild) {notes.removeChild(notes.firstChild)};
+    for (var i = 1; i < 7; i++) { 
         let headers = document.getElementById('header' + [i]);
         headers.classList.remove('selected'); 
     };
     document.getElementById('game-bg').style.display = "none";
     document.getElementById('gameSelection').style.display = "none";
+    document.getElementById('mods').style.display = "none";
     document.getElementById('faq').style.display = "none";
     document.getElementById('installations').style.display = "none";
+    document.getElementById('patchNotes').style.display = "none";
 }
 
 // Prevents touchscreen move
@@ -291,6 +440,7 @@ function preventMotion(event)
     event.stopPropagation();
 }
 
+// Username Generator
 let username = document.getElementById('username');
 let userchosen = false;
 if (userchosen === false && !localStorage.getItem("username")) {

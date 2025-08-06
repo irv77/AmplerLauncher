@@ -1,0 +1,178 @@
+[
+  {
+    "title": "Auto Clicker",
+    "author": "Radmanplays",
+    "description": "Automatically clicks for you",
+    "icon": "./assets/images/mod-icons/cursor.png",
+    "link": "auto-clicker.js",
+    "active": false
+  },
+  {
+    "title": "Auto Respawn",
+    "author": "Oeil-de-Lynx",
+    "description": "Eagler Autorespawning!",
+    "icon": "./assets/images/mod-icons/missing.png",
+    "link": "auto-respawn.js",
+    "active": false
+  },
+  {
+    "title": "AutoFish",
+    "author": "ZXMushroom63",
+    "description": "Automatically fishes for you",
+    "icon": "./assets/images/mod-icons/fishing-rod.png",
+    "link": "autofish.js",
+    "active": false
+  },
+  {
+    "title": "Barney's Music Mod",
+    "author": "BarneyTheGod",
+    "description": "Play your music inside of eaglercraft",
+    "icon": "./assets/images/mod-icons/music.png",
+    "link": "barneys-music.js",
+    "active": false
+  },
+  {
+    "title": "Blink",
+    "author": "ZXMushroom63",
+    "description": "You start to blink!",
+    "icon": "./assets/images/mod-icons/missing.png",
+    "link": "blink.js",
+    "active": false
+  },
+  {
+    "title": "Blur",
+    "author": "Murturtle",
+    "description": "Makes your fps 5 when unfocused!",
+    "icon": "./assets/images/mod-icons/blur.png",
+    "link": "blur.js",
+    "active": false
+  },
+  {
+    "title": "Burmod WIP",
+    "author": "Murturtle",
+    "description": "Client for eaglerforge (v0.2)",
+    "icon": "./assets/images/mod-icons/missing.png",
+    "link": "burmod.js",
+    "active": false
+  },
+  {
+    "title": "Chat Commands Mod",
+    "author": "Neverflagastralis",
+    "description": "An open link mod with a built in customizable bug reports system!",
+    "icon": "./assets/images/mod-icons/commands.png",
+    "link": "chat-commands.js",
+    "active": false
+  },
+  {
+    "title": "Chat Shortcuts",
+    "author": "ZXMushroom63",
+    "description": "shortcuts: {health}, {pos}, {title}, {me}, {x}, {y}, {z}, {level}, {walked}, {chunk}",
+    "icon": "./assets/images/mod-icons/shortcuts.png",
+    "link": "chat-shortcuts.js",
+    "active": false
+  },
+  {
+    "title": "Eagler Homes",
+    "author": "Patrick",
+    "description": "Adds setting homes and teleportation to them",
+    "icon": "./assets/images/mod-icons/home.png",
+    "link": "homes.js",
+    "active": false
+  },
+  {
+    "title": "Fresh Eagler UI",
+    "author": "Murturtle",
+    "description": "Makes the UIs slide in and re works the main screen!",
+    "icon": "./assets/images/mod-icons/missing.png",
+    "link": "fresh-ui.js",
+    "active": false
+  },
+  {
+    "title": "Fullbright",
+    "author": "Radmanplays",
+    "description": "Full bright mod for eaglerforge",
+    "icon": "./assets/images/mod-icons/bright.png",
+    "link": "fullbright.js",
+    "active": false
+  },
+  {
+    "title": "Grapple Hook",
+    "author": "ZXMushroom63",
+    "description": "Turns the fishing hook into a grappling hook",
+    "icon": "./assets/images/mod-icons/grappling-gun.png",
+    "link": "grapple-hook.js",
+    "active": false
+  },
+  {
+    "title": "JEI",
+    "author": "Oeil-de-Lynx",
+    "description": "Just Enough Items, but Eagler!",
+    "icon": "./assets/images/mod-icons/jei.png",
+    "link": "jei.js",
+    "active": false
+  },
+  {
+    "title": "Jetpack",
+    "author": "Radmanplays",
+    "description": "Allows you to fly as if you had a jetpack",
+    "icon": "./assets/images/mod-icons/jetpack.png",
+    "link": "jetpack.js",
+    "active": false
+  },
+  {
+    "title": "Jump Boost",
+    "author": "Oeil-de-Lynx",
+    "description": "Permanent Jumpboost!",
+    "icon": "./assets/images/mod-icons/jump.png",
+    "link": "jump-boost.js",
+    "active": false
+  },
+  {
+    "title": "No Fall Damage",
+    "author": "ZXMushroom63",
+    "description": "You no longer take fall damage",
+    "icon": "./assets/images/mod-icons/fall_damage.png",
+    "link": "no-fall-damage.js",
+    "active": false
+  },
+  {
+    "title": "Player Vision",
+    "author": "Oeil-de-Lynx",
+    "description": "See other players in your Eaglerforge servers!",
+    "icon": "./assets/images/mod-icons/highlight.png",
+    "link": "player-vision.js",
+    "active": false
+  },
+  {
+    "title": "Semi-Auto Login",
+    "author": "Murturtle",
+    "description": "Press L to login without typing!",
+    "icon": "./assets/images/mod-icons/missing.png",
+    "link": "auto-login.js",
+    "active": false
+  },
+  {
+    "title": "Stats Hud",
+    "author": "Neverflagastralis",
+    "description": "An all-new StatsHud",
+    "icon": "./assets/images/mod-icons/missing.png",
+    "link": "stats.js",
+    "active": false
+  },
+  {
+    "title": "Super Speed",
+    "author": "Radmanplays",
+    "description": "Makes you faster",
+    "icon": "./assets/images/mod-icons/speed.png",
+    "link": "speed.js",
+    "active": false
+  },
+    {
+    "title": "Xray",
+    "author": "Radmanplays",
+    "description": "Simple xray mod",
+    "icon": "./assets/images/mod-icons/xray.png",
+    "link": "xray.js",
+    "active": false
+  }
+]
