@@ -1,5 +1,12 @@
 [
     {
+       "title": "Tuff Client",
+       "version": "1.12.2-v1.0.0",
+       "icon": "./assets/images/icons/tuff_client.png",
+       "link": "./mc/tuffclient/",
+       "active": true
+    },    
+    {
        "title": "Astra Client",
        "version": "1.8.8-v1.5",
        "icon": "./assets/images/icons/astra-client.png",
