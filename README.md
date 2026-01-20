@@ -8,7 +8,7 @@
 <hr>
 
  ## Versions
- __v1.4.10__ - Added Tuff Client and updated Astra Client version<br>
+ __v1.4.10__ - Added Tuff Client, updated Astra Client version, and fixed Red's controller support bug!<br>
  __v1.4.00__ - Added patch notes, bug fixes, and integrated mods!<br>
  __v1.3.10__ - Organized and updated code, added memory options, more games, installations, usernames, and faq screen!<br>
  __v1.2.00__ - Updated games.<br>
@@ -18,9 +18,7 @@
  <hr>
 
 ## Installation
- Currently just download the repository for the source code!<br>
- Future plans for an offline file may be possible!
-
+ To run offline, download [this repository](../../archive/refs/heads/main.zip) to your device, extract the files, install [VS Code](https://code.visualstudio.com/download), open the folder containing the files, install this [extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer), and click the button that says "Go Live" in the bottom right corner of the window. This will open Ampler Launcher in your default browser and allow you to play offline.
 <hr>
 
 ## Features Planned
@@ -41,7 +39,7 @@
 - [ ] Add Skins screen
 - [x] Add Patch Notes screen
 - [ ] Fix display errors
-- [ ] Offline launcher download?
+- [x] Offline launcher download?
 </details>
 
 <hr>
