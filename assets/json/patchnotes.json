@@ -1,5 +1,16 @@
 [
     {
+        "title": "Clients Updated",
+        "version": "v1.4.10",
+        "description": "Added Tuff Client and updated Astra Client version",
+        "icon": "icons/tuff_client.png",
+        "type": "site",
+        "notes": [
+            "Added Tuff Client and updated Astra Client version.",
+            "Fixed Red's Controller Support bug."
+        ]
+    },    
+    {
         "title": "Site Update: Modded",
         "version": "v1.4.00",
         "description": "Added patch notes, bug fixes, and integrated mods!",
