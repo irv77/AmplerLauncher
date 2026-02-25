@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <div id="notescreen"></div>
+    <div id="externalmenu"></div>
     <div id="naerror" class="error">
         <div>
             <p style="margin-left: 1vw;" class="bolded">SORRY!</p>
@@ -30,6 +30,21 @@
         <div>
             <p style="margin-left: 1vw;" class="bolded">ERROR!</p>
             <p>Currently this screen resolution is buggy.</p>
+        </div>
+    </div>
+    <div id="confirmationmenu">
+        <div class="confrimationmenuscreen">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" onclick="confirmationcancel()"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M18 6l-12 12" /><path d="M6 6l12 12" /></svg>
+            <p class="bolded warningtitle"></p>
+            <p class="warningdesc"></p>
+            <div class="confirmationbuttons">
+                <div class="classicbutton" onclick="confirmationcancel();">
+                    <p class="bolded">Cancel</p>
+                </div>
+                <div class="redbutton classicbutton warningbutton">
+                    <p class="bolded">Yes, Delete</p>
+                </div>
+            </div>
         </div>
     </div>
     <div class="sidebar" id="sidebar">
@@ -57,29 +72,34 @@
                 <p>Mobile/Controller </p>
             </div>
         </div>
-        <div id="gtabs5" class="sidebarOptions sidebarBottom" onclick="errorNA('credits')">
+        <div id="gtabs5" class="sidebarOptions sidebarBottom" onclick="creditsmenu()">
             <img src="./assets/images/sidebar/m-credits.png"><div class="gTabsText"><p> Credits</p></div>
         </div>
-        <div id="gtabs6" class="sidebarOptions sidebarBottom" onclick="errorNA('settings')">
+        <div id="gtabs6" class="sidebarOptions sidebarBottom" onclick="settingsmenu()">
             <img src="./assets/images/sidebar/m-settings.png"><div class="gTabsText"><p> Settings</p></div>
         </div>
-        <div class="launcherVersion"><p>v1.4.00</p></div>
+        <div class="launcherVersion"><p>v1.5.00</p></div>
     </div>
     <div class="mainPage">
         <div class="gameHeader">
             <p id="gameedition" class="currentGame bolded">EAGLERCRAFT WEB EDITION</p>
                 <ul class="gameTabs">
                     <li id="header1" class="headerButtons selected" onclick="playheader()">Play</li>
-                    <li id="header2" style="display: none;" class="headerButtons" onclick="modsheader()">Mods</li>
+                    <li id="header2" class="headerButtons" onclick="modsheader()">Mods</li>
                     <li id="header3" class="headerButtons" onclick="faqsheader()">FAQ</li>
                     <li id="header4" class="headerButtons" onclick="installationheader()">Installations</li>
                     <li id="header5" class="headerButtons" onclick="errorNA('skins')">Skins</li>
                     <li id="header6" class="headerButtons" onclick="patchnotesheader()">Patch Notes</li>
+                    <li id="header7" class="headerButtons" onclick="contributorsheader()">Contributors</li>
+                    <li id="header8" class="headerButtons" onclick="creditsheader()">Credits</li>
+                    <li id="header9" class="headerButtons" onclick="generalsettingsheader()">General</li>
+                    <li id="header10" class="headerButtons" onclick="aboutsettingsheader()">About</li>
                 </ul>
         </div>
         <div id="mods">
             <img class="modketplace-title" src="./assets/images/modketplace-title.png" alt="modketplace">
             <p class="bolded modssubtitle">Community mods for the EaglerForge Installation.</p>
+            <hr style="margin-top: 2vh;">
             <div id="modsbox"></div>
         </div>
         <div id="faq">
@@ -87,7 +107,14 @@
             <p>Here are some frequently asked questions about Ampler Launcher.</p>
             <div id="faqbox"></div>
         </div>
-        <div id="installations"><div id="installationsbox"></div></div>
+        <div id="installations">
+            <div class="newinstallation">
+                <div id="newinstallationbutton" class="classicbutton" onclick="newinstallation('./assets/json/base.json');">
+                    <p class="bolded">New installation</p>
+                </div>
+            </div>
+            <div id="installationsbox"></div>
+        </div>
         <div id="game-bg" style="background-image: url(./assets/images/web-edition.jpg);">
             <img id="game-title" src="./assets/images/web-title.png" alt="eaglercraft">
         </div>
@@ -99,6 +126,92 @@
                 </div>
                 <hr>
                 <div id="patchnotesbox"></div>
+            </div>
+        </div>
+        <div id="contributors">
+            <div style="text-align: center;">
+                <p class="bolded contributorstitle">Contributors</p>
+                <p>People who have added to the Ampler Launcher</p>
+            </div>
+            <div class="contributorsdiv">
+                <div class="contributortile">
+                    <div class="contributorside">
+                        <p class="bolded contributoruser">IRV77</p>
+                        <p class="contributordescription">Creator of Ampler Launcher</p>
+                    </div>
+                        <img src="./assets/images/credits/irv77.png">
+                </div>
+                <div class="contributortile">
+                    <div class="contributorside">
+                        <p class="bolded contributoruser">CrimsonWeb</p>
+                        <p class="contributordescription">Custom installation code and error code</p>
+                    </div>
+                        <img src="./assets/images/credits/crimsonweb.png">
+                </div>
+                <div class="contributortile">
+                    <div class="contributorside">
+                        <p class="bolded contributoruser">マキシー</p>
+                        <p class="contributordescription">Color Themes CSS</p>
+                    </div>
+                        <img src="./assets/images/credits/oip.png">
+                </div>
+            </div>
+        </div>
+        <div id="credits">
+            <div style="text-align: center;">
+                <p class="bolded contributorstitle">Credits</p>
+                <p>Resources that are used</p>
+            </div>
+            <div class="contributorsdiv">
+                <div class="credittile">
+                    <div class="contributorside">
+                        <p class="bolded contributoruser">Web Jeet</p>
+                        <p class="contributordescription">Original minecraft launcher concept code</p>
+                    </div>
+                        <img src="./assets/images/credits/web-jeet.png">
+                </div>
+                <div class="credittile">
+                    <div class="contributorside">
+                        <p class="bolded contributoruser">Eaglercraft</p>
+                        <p class="contributordescription">Minecraft code for website</p>
+                    </div>
+                        <img src="./assets/images/icons/eaglercraft.png">
+                </div>
+            </div>
+        </div>
+        <div id="settings">
+            <div id="generalsettings">
+                <div class="classicbutton" onclick="location.href='https://discord.gg/xuu8TnSY4b'">
+                    <p class="bolded">Review the Launcher</p>
+                </div>
+                <p class="bolded settingstitle">LAUNCHER SETTINGS</p>
+                <div class="settingoption"><input id="launcherpresets" class="settingsbox" type="checkbox" onchange="presetlaunchers()"><p>Preset launchers</p></div>
+                <div class="settingoption"><input id="launchnewtab" class="settingsbox" type="checkbox" onchange="launchnewtab()"><p>Launch game in new window</p></div>
+                <p class="bolded settingstitle">LAUNCHER USERNAME</p>
+                <input id="usernameinput" type="text" autocomplete="off" placeholder="Username" onkeyup="usernamechange()">
+                <p class="bolded settingstitle">EAGLER WEB EDITION SETTINGS</p>
+                <p style="font-style: italic;">More Coming Soon!</p>
+                <div class="clearstoragebutton" onclick="clearlocalstorage()">
+                    <p class="bolded">Clear All Local Storage</p>
+                </div>
+            </div>
+            <div id="aboutsettings">
+                <div style="position: relative;">
+                    <div class="whatsnewbutton" onclick="generaterecentnote();">
+                        <p class="bolded">What's New</p>
+                    </div>
+                    <p class="bolded settingstitle">AMPLER LAUNCHER</p>
+                    <p class="settingsdetails">A minecraft themed launcher for Eaglercraft!</p>
+                    <p class="settingsdetails">Created by: IRV77, Vulconcium</p>
+                </div>
+                <hr>
+                <p class="bolded settingstitle">UI</p>
+                <p class="settingsdetails">v1.5.00</p>
+                <p class="settingsdetails">Tuesday, February 24th, 2026</p>
+                <hr>
+                <p class="bolded settingstitle">LEGAL AND CREDITS</p>
+                <p class="settingsdetails">This website is not affiliated with Mojang.</p>
+                <p class="settingsdetails">Copyright © 1999-2026 <span style="color: red; text-shadow: 0 0 1vw;">Vulen Corporation</span>. All rights reserved.</p>
             </div>
         </div>
         <div id="gameSelection">

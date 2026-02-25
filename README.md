@@ -1,4 +1,4 @@
-# <img src=".github/assets/logo.png" alt="Ampler Logo" align="right" width="150px"> Ampler Launcher v1.4.00
+# <img src=".github/assets/logo.png" alt="Ampler Logo" align="right" width="150px"> Ampler Launcher v1.5.00
  A minecraft themed launcher for Eaglercraft!<br>
  Containing some of the best clients all in one place!
 
@@ -8,6 +8,7 @@
 <hr>
 
  ## Versions
+ __v1.5.00__ - Added customizable launcher options, credits, settings, more memory options, and updated code!<br>
  __v1.4.00__ - Added patch notes, bug fixes, and integrated mods!<br>
  __v1.3.10__ - Organized and updated code, added memory options, more games, installations, usernames, and faq screen!<br>
  __v1.2.00__ - Updated games.<br>
@@ -28,11 +29,11 @@
 <summary>Click here to expand feature list</summary>
 
 - [ ] Add the servers screen
-- [ ] Add Credits screen
-- [ ] Add Settings screen
+- [x] Add Credits screen
+- [x] Add Settings screen
 - [x] Rewrite some of the css and js
 - [x] Organize code, and add comments
-- [ ] Add a customizable launcher selector
+- [x] Add a customizable launcher selector
 - [x] Save last played game
 - [x] Add FAQ screen
 - [x] Add Installations screen

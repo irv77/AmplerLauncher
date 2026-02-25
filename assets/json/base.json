@@ -15,14 +15,14 @@
     },
     {
        "title": "Previous release",
-       "version": "1.8.8-u51",
+       "version": "1.8.8-u53",
        "icon": "./assets/images/mc-icons/dirt.png",
        "link": "./mc/1.8.8/",
        "active": true
     },
     {
        "title": "Previous release WASM",
-       "version": "1.8.8-u51-wasm",
+       "version": "1.8.8-u53-wasm",
        "icon": "./assets/images/mc-icons/dirt-wasm.png",
        "link": "./mc/1.8.8-wasm/",
        "active": true

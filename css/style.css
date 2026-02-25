@@ -25,12 +25,20 @@ body {
     overflow: hidden;
     height: 100%;
     font-family: 'Roboto', sans-serif;
+    image-rendering: pixelated;
     --ui-main-lighter: #514d4c;
     --ui-main-light: #353535;
     --ui-main: #1e1e1e;
     --ui-main-dark: #131313;
     --text-secondary: #cccccc;
     --ui-select: #008542;
+    --ui-select-secodary: #1c985a;
+    --ui-red: #aa0000;
+    --ui-red-secondary: #ae2525;
+    --ui-contributors: #1c190b;
+    --ui-contributors-secondary: #ae991e;
+    --ui-credits: #0b141c;
+    --ui-credits-secondary: #1e58ae;
 }
 
 ul {
@@ -50,6 +58,39 @@ hr {
 
 .bolded {
     font-weight: 800;
+}
+
+.classicbutton {
+    border: 0.1vw solid var(--ui-main-light);
+    padding: 0.3vw 2vw;
+    cursor: pointer;
+    width: max-content;
+    transition: 0.15s;
+}
+
+.classicbutton:hover {
+    border: 0.1vw solid var(--ui-main-lighter);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.classicbutton.redbutton {
+    background-color: var(--ui-red);
+    border: 0.1vw solid transparent;
+}
+
+.classicbutton.redbutton:hover {
+    background-color: var(--ui-red-secondary);
+    border: 0.1vw solid var(--ui-main-lighter);
+}
+
+.classicbutton.greenbutton {
+    background-color: var(--ui-select);
+    border: 0.1vw solid transparent;
+}
+
+.classicbutton.greenbutton:hover {
+    background-color: var(--ui-select-secodary);
+    border: 0.1vw solid var(--ui-main-lighter);
 }
 
 /* Error CSS */
@@ -93,6 +134,56 @@ hr {
     }
 }
 
+/* Confirmation Menu CSS */
+
+#confirmationmenu {
+    position: absolute;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3vw;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 1;
+}
+
+.confrimationmenuscreen {
+    position: relative;
+    width: 45vw;
+    padding: 2vw 3vw;
+    border-radius: 0.5vw;
+    background-color: var(--ui-main);
+}
+
+.confrimationmenuscreen.deleteinstallation {
+    width: 35vw;
+    text-align: center;
+}
+
+.confrimationmenuscreen.deleteinstallation .warningdesc {
+    font-style: italic;
+}
+
+#confirmationmenu svg {
+    position: absolute;
+    cursor: pointer;
+    top: 1vw;
+    right: 1vw;
+}
+
+.warningtitle {
+    margin-bottom: 1vh;
+    font-size: 1.4vw;
+}
+
+.confirmationbuttons {
+    display: flex;
+    justify-content: center;
+    gap: 1vw;
+    margin-top: 3vh;
+}
+
 /* Sidebar CSS */
 
 .sidebar {
@@ -120,6 +211,7 @@ hr {
 
 .sidebarOptions.sidebarBottom {
     position: absolute;
+    font-size: 1.1vw;
 }
 
 .sidebarOptions.selected {
@@ -310,45 +402,45 @@ hr {
     flex-direction: column;
     align-items: center;
     overflow-y: scroll;
+    background-color: var(--ui-main-dark);
 }
 
 .modketplace-title {
     margin: 4vh 0 1vh;
-    width: 58vw;
+    width: 45vw;
 }
 
 .modssubtitle {
-    font-size: 1.6vw;
+    font-size: 1.3vw;
 }
 
 #modsbox {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 5vw 1.5vw;
-    padding: 4vh 0 7vh;
+    gap: 3vw 1.5vw;
+    padding: 4vh 0 11vh;
 }
 
 .modoption {
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    width: 18vw;
-    border: 0.5vw solid var(--ui-main);
-    transition: 0.1s;
+    width: 12vw;
+    transition: 0.15s;
 }
 
-.modoption:hover {
-    scale: 1.05;
-}
-
-.modoption img {
-    border: 0.3vw solid #AA0000;
+.modoption {
+    border: 0.15vw solid var(--ui-red);
     image-rendering: pixelated;
 }
 
-.modoption.selected img {
-    border: 0.3vw solid #00AA00;
+.modoption.selected {
+    border: 0.15vw solid #00AA00;
+}
+
+.modoption img {
+    background-color: var(--ui-main);
 }
 
 .modoption:hover img {
@@ -356,14 +448,14 @@ hr {
 }
 
 .moddetails {
-    background-color: var(--ui-main-lighter);
+    background-color: var(--ui-main-light);
     padding: 0.5vw;
     height: -webkit-fill-available;
-    font-size: 1.3vw;
+    font-size: 1.1vw;
 }
 
 .modtitle {
-    font-size: 1.5vw;
+    font-size: 1.2vw;
 }
 
 .modauthor {
@@ -381,7 +473,7 @@ hr {
     align-items: center;
     background-color: var(--ui-main-dark);
     overflow-y: scroll;
-    font-size: 1.3vw;
+    font-size: 1.2vw;
 }
 
 .faqtitle {
@@ -392,7 +484,7 @@ hr {
 #faqbox {
     display: flex;
     flex-direction: column;
-    padding: 5vh 11vw 7vh;
+    padding: 5vh 11vw 15vh;
     width: -webkit-fill-available;
 }
 
@@ -423,10 +515,89 @@ hr {
     overflow-y: scroll;
 }
 
+.newinstallation {
+    width: -webkit-fill-available;
+    margin-top: 5vh;
+
+}
+
+#installations .classicbutton {
+    margin-left: 8vh;
+}
+
+.newinstallationdetails {
+    text-align: left;
+    width: 45vw;
+    margin: 3vh 0;
+    overflow-y: scroll;
+}
+
+.newinstallationicons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5vw;
+}
+
+.newinstallationicons img {
+    border: 0.1vw solid transparent;
+    border-radius: 1vw;
+    padding: 0.5vw;
+    cursor: pointer;
+    width: 4vw;
+    transition: 0.15s;
+    margin-bottom: 1vw;
+}
+
+.newinstallationicons img:hover {
+    border: 0.1vw solid var(--ui-main-lighter);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.newinstallationicons img.selected {
+    border: 0.1vw solid var(--ui-main-lighter);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.newinstallationheader {
+    display: flex;
+    align-items: center;
+    font-size: 1.3vw;
+    padding: 1vw 0;
+}
+
+.newinstallationdetails input, .newinstallationdetails select {
+    font-size: 1.2vw;
+    margin: 0.2vw;
+    padding: 0.3vw 1vw;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.25);
+    border: 0.2vw solid var(--ui-main-lighter);
+    border-radius: 0.25vw;
+    width: -webkit-fill-available;
+}
+
+.newinstallationdetails option {
+    background-color: var(--ui-main-light);
+}
+
+.newinstallationfooter {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.newinstallationfooterbuttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1vw;
+    margin: 2vw;
+}
+
 #installationsbox {
     display: flex;
     flex-direction: column;
-    padding: 5vh 0 7vh;
+    padding: 3vh 0 7vh;
 }
 
 .installationOptions {
@@ -435,10 +606,7 @@ hr {
     width: 74vw;
     align-items: center;
     font-size: 1.2vw;
-}
-
-.installationOptions:hover, .installationBox:hover {
-    background-color: var(--ui-main-light);
+    transition: 0.15s;
 }
 
 .installationOption {
@@ -447,7 +615,6 @@ hr {
     display: flex;
     gap: 2vw;
     align-items: center;
-    cursor: pointer;
 }
 
 .installationBox {
@@ -455,7 +622,7 @@ hr {
     height: 3.5vh;
     appearance: none;
     border: 0.3vw solid #0c6e3d;
-    pointer-events: none;
+    cursor: pointer;
 }
 
 .installationBox:checked {
@@ -477,6 +644,19 @@ hr {
     justify-content: flex-start;
 }
 
+.editbuttons {
+    position: absolute;
+    right: 7vw;
+    display: flex;
+    gap: 2vw;
+    align-items: center;
+}
+
+.editbuttons .classicbutton {
+    margin-left: 0 !important;
+}
+
+
 /* Patch Notes Menu CSS */
 
 #patchNotes {
@@ -487,6 +667,7 @@ hr {
     flex-direction: column;
     background-color: var(--ui-main-dark);
     overflow-y: scroll;
+    font-size: 1.3vw;
 }
 
 .patchnotes-title {
@@ -524,9 +705,9 @@ hr {
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    width: 17vw;
+    width: 16vw;
     background-color: black;
-    transition: 0.1s;
+    transition: 0.15s;
 }
 
 .patchnote:hover {
@@ -534,7 +715,7 @@ hr {
 }
 
 .patchnote img {
-    margin: 0.5vw;
+    margin: 1vw;
     image-rendering: pixelated;
 }
 
@@ -542,10 +723,10 @@ hr {
     border-top: 0.1vh solid var(--ui-main-light);
     padding: 0.5vw 1vw 1vw;
     height: -webkit-fill-available;
-    font-size: 1.3vw;
+    font-size: 1.2vw;
 }
 
-#notescreen {
+#externalmenu {
     position: absolute;
     display: none;
     flex-direction: column;
@@ -572,7 +753,7 @@ hr {
     height: 3vw;
 }
 
-#notescreen hr {
+#externalmenu hr {
     width: 100vw;
 }
 
@@ -591,6 +772,220 @@ hr {
 .notescreendetails ul {
     list-style: revert;
     padding: revert;
+}
+
+/* Contributors Screen CSS */
+
+#contributors {
+    position: absolute;
+    display: none;
+    align-content: center;
+    flex-wrap: nowrap;
+    gap: 2vw;
+    width: 84vw;
+    height: 91vh;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--ui-main-dark);
+    overflow-y: scroll;
+    font-size: 1.2vw;
+}
+
+.contributorstitle {
+    font-size: 2.3vw;
+    padding-top: 3vh;
+}
+
+.contributorsdiv {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2vw;
+    align-items: center;
+    flex-direction: row;
+}
+
+.contributortile {
+    display: flex;
+    gap: 1vw;
+    width: 56vh;
+    height: 28vh;
+    background-color: var(--ui-contributors);
+    border: 0.1vw solid var(--ui-contributors-secondary);
+    transition: 0.15s;
+}
+
+.contributortile:hover {
+    background-color: #332d14;
+    border: 0.1vw solid #ccb222;
+}
+
+.contributorside {
+    width: 26vh;
+    padding: 1.5vw;
+}
+
+.contributorside .contributoruser {
+    font-size: 1.5vw;
+}
+
+.contributorside .contributordescription {
+    color: var(--text-secondary);
+}
+
+#contributors img, #credits img {
+    width: 28vh;
+    padding: 1vw;
+    transition: 0.15s;
+}
+
+#contributors .contributortile:hover img, #credits .credittile:hover img {
+    filter: brightness(1.15);
+}
+
+/* Credits Screen CSS */
+
+#credits {
+    position: absolute;
+    display: none;
+    align-content: center;
+    flex-wrap: nowrap;
+    gap: 2vw;
+    width: 84vw;
+    height: 91vh;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--ui-main-dark);
+    overflow-y: scroll;
+    font-size: 1.2vw;
+}
+
+.credittile {
+    display: flex;
+    gap: 1vw;
+    width: 56vh;
+    height: 28vh;
+    background-color: var(--ui-credits);
+    border: 0.1vw solid var(--ui-credits-secondary);
+    transition: 0.15s;
+}
+
+.credittile:hover {
+    background-color: #142331;
+    border: 0.1vw solid #1f68d6;
+}
+
+/* Settings Screen CSS */
+
+#settings {
+    position: absolute;
+    display: none;
+    width: 84vw;
+    height: 91vh;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: var(--ui-main-dark);
+    overflow-y: scroll;
+    font-size: 1vw;
+    padding: 5vh 3vw 7vh;
+}
+
+#generalsettings {
+    display: block;
+}
+
+#generalsettings .settingstitle {
+    font-size: 1.1vw;
+    padding-top: 4vh;
+}
+
+.settingoption {
+    display: flex;
+    align-items: center;
+    gap: 0.5vw;
+    margin-bottom: 0.5vw;
+}
+
+.settingoption p {
+    margin-top: 0.1vw;
+}
+
+.settingsbox {
+    width: 2vh;
+    height: 2vh;
+    appearance: none;
+    border: 0.1vw solid var(--ui-red);
+    cursor: pointer;
+}
+
+.settingsbox:hover {
+    background-color: var(--ui-main-light);
+}
+
+.settingsbox:checked {
+    background-color: #0c6e3d;
+    border-color: #00AA00;
+}
+
+.settingsbox:checked:hover {
+    background-color: #0c5c34;
+}
+
+#usernameinput {
+    margin: 0.5vw 0.2vw 0;
+    padding: 0.3vw 1vw;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.25);
+    border: 0.1vw solid var(--ui-main-light);
+    border-radius: 0.25vw;
+    width: -webkit-fill-available;
+}
+
+.clearstoragebutton {
+    margin-top: 3vw;
+    background-color: #daa520;
+    padding: 0.5vw 2.5vw;
+    cursor: pointer;
+    width: max-content;
+    transition: 0.15s;
+    color: var(--ui-main-dark);
+}
+
+.clearstoragebutton:hover {
+    background-color: #ffbf00;
+}
+
+#aboutsettings {
+    display: none;
+}
+
+.whatsnewbutton {
+    position: absolute;
+    right: 0;
+    border: 0.1vw solid var(--ui-main-light);
+    padding: 0.3vw 2vw;
+    cursor: pointer;
+    width: max-content;
+}
+
+.whatsnewbutton:hover {
+    border: 0.1vw solid var(--ui-main-lighter);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+#aboutsettings .settingstitle {
+    font-size: 1.1vw;
+    padding-top: 2vh;
+}
+
+#aboutsettings hr {
+    margin-top: 2vh;
+}
+
+.settingsdetails {
+    color: var(--text-secondary);
+    user-select: text;
 }
 
 /* Dropdown Menu CSS */
@@ -641,4 +1036,8 @@ hr {
     align-items: center;
     justify-content: flex-start;
     font-size: 1.1vw;
+}
+
+#gametitle {
+    width: max-content;
 }

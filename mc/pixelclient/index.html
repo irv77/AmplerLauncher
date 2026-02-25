@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html style="width:100%;height:100%;">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+		<meta name="description" content="EaglercraftX test directory HTML page" />
+		<meta name="keywords" content="eaglercraft, eaglercraftx, minecraft, 1.8, 1.8.8" />
+		<title>EaglercraftX</title>
+		<meta property="og:locale" content="en-US" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="EaglercraftX" />
+		<meta property="og:description" content="test directory HTML page" />
+		<link type="image/png" rel="shortcut icon" href="./favicon.png" />
+		<script type="text/javascript" src="./classes.js" id="gameClass"></script>
+		<script type="text/javascript">
+			"use strict";
+			window.addEventListener("load", () => {
+			  if (document.location.href.startsWith("file:")) {
+				alert(
+				  "HTTP please, do not open this file locally, run a local HTTP server and load it via HTTP"
+				);
+			  } else {
+				let assetsURI = window.eaglercraftXOpts?.assetsURI;
+
+				// %%%%%%%%% launch options %%%%%%%%%%%%
+	  
+				async function fetchOpts() {
+				  await fetch("./opts-18.js")
+					.then((r) => r.text())
+					.then((r) => eval(r));
+					if (typeof getSplits === "function") {
+						if (typeof window.splitEPK !== "undefined" && window.splitEPK === true) {
+							await getSplits("assets.epk")
+							.then((data) => {
+								if (!data) throw new Error();
+								let blob = new Blob([data], { type: "application/octet-stream" });
+								return URL.createObjectURL(blob);
+							})
+							.then((blobUrl) => window.eaglercraftOpts.assetsURI = blobUrl)
+							.catch(()=>{});
+						} if (typeof window.splitClasses !== "undefined" && window.splitClasses === true) {
+							await getSplits("classes.js")
+							.then((data) => {
+								if (!data) throw new Error();
+								let blob = new Blob([data], { type: "application/octet-stream" });
+								return URL.createObjectURL(blob);
+							})
+							.then(async(blobUrl) => {
+								const oldClass = document.getElementById("gameClass");
+								if (oldClass) oldClass.remove();
+								const gameClass = document.createElement("script");
+								gameClass.id = "gameClass";
+								gameClass.src = blobUrl;
+								await new Promise((resolve, reject) => {
+									gameClass.onload = () => {
+										resolve();
+									};
+									gameClass.onerror = () => {
+										reject(new Error());
+									};
+									document.head.appendChild(gameClass);
+								});
+							})
+							.catch(()=>{});
+						}
+					}
+				}
+	  
+				// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	  
+				var q = window.location.search;
+				if (typeof q === "string" && q.startsWith("?")) {
+				  q = new URLSearchParams(q);
+				  var s = q.get("server");
+				}
+	  
+				async function startGame() {
+				  await fetchOpts();
+				  window.eaglercraftXOpts.joinServer = s;
+				  if (assetsURI) window.eaglercraftXOpts.assetsURI = assetsURI;
+				  main();
+				}
+				startGame();
+			  }
+			});
+		  </script>
+	</head>
+	<body style="margin:0px;width:100%;height:100%;overflow:hidden;background-color:transparent;" id="game_frame">
+	</body>
+</html>

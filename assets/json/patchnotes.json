@@ -1,5 +1,20 @@
 [
     {
+        "title": "Site Update: Customizable",
+        "version": "v1.5.00",
+        "description": "Added customizable launcher options, credits, settings, more memory options, and updated code!",
+        "date": "Tuesday, February 24th, 2026",
+        "icon": "icons/settings-pn.png",
+        "type": "site",
+        "notes": [
+            "Added customizable launcher options, allowing users to create their own name and icon.",
+            "Added credits screen, displaying everybody who has contributed.",
+            "Added the settings screen, allowing users to customize the launcher, and learn info.",
+            "Implemented more memory on choices made inside of the launcher.",
+            "Updated games, fixed bugs, modified css."
+        ]
+    },
+    {
         "title": "Site Update: Modded",
         "version": "v1.4.00",
         "description": "Added patch notes, bug fixes, and integrated mods!",
@@ -50,35 +65,42 @@
     {
         "title": "Site Update: W.A.S.M.",
         "version": "v1.2.00",
-        "description": "Come back soon for full log!",
+        "description": "Adding W.A.S.M. options and updated games!",
         "date": "Tuesday, April 1st, 2025",
         "icon": "mc-icons/grass-wasm.png",
         "type": "site",
-        "notes": []
+        "notes": [
+            "Added W.A.S.M. options to launcher.",
+            "Updated games."
+        ]
     },
     {
         "title": "Site Update: CYA CSS",
         "version": "v1.1.00",
-        "description": "Come back soon for full log!",
+        "description": "Removed/updated css and code!",
         "date": "Wednesday, November 13th, 2024",
         "icon": "mc-icons/skull.png",
         "type": "site",
-        "notes": []
+        "notes": [
+            "Removed clutterful CSS",
+            "Removed unnecessary code.",
+            "Updated images for better appearance."
+        ]
     },
     {
         "title": "Site Roadmap",
-        "version": "v1.4.00",
+        "version": "v1.5.00",
         "description": "Current progress on the future of Ampler Launcher!",
-        "date": "Tuesday, August 5th, 2025",
+        "date": "Thursday, February 19th, 2026",
         "icon": "icons/roadmap.png",
         "type": "site",
         "notes": [
             "✘ Add the servers screen",
-            "✘ Add Credits screen",
-            "✘ Add Settings screen",
+            "✔ Add Credits screen",
+            "✔ Add Settings screen",
             "✔ Rewrite some of the css and js",
             "✔ Organize code, and add comments",
-            "✘ Add a customizable launcher selector",
+            "✔ Add a customizable launcher selector",
             "✔ Save last played game",
             "✔ Add FAQ screen",
             "✔ Add Installations screen",

@@ -1,0 +1,26 @@
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+    <defs>
+        <filter id="drop1" x="-50%" y="-50%" width="200%" height="200%">
+            <feDropShadow dx="0" dy="0" stdDeviation="1" flood-color="#7D32E6" flood-opacity="0.7"/>
+        </filter>
+        <filter id="drop2" x="-50%" y="-50%" width="200%" height="200%">
+            <feDropShadow dx="0" dy="0" stdDeviation="1" flood-color="#6F2CCE" flood-opacity="0.7"/>
+        </filter>
+        <filter id="drop3" x="-50%" y="-50%" width="200%" height="200%">
+            <feDropShadow dx="0" dy="0" stdDeviation="1" flood-color="#5F26B4" flood-opacity="0.7"/>
+        </filter>
+    </defs>
+
+
+    <rect width="4" height="4" x="5" y="13" fill="#7D32E6" filter="url(#drop1)"/>
+    <rect width="3" height="3" x="10" y="9" fill="#6F2CCE" filter="url(#drop2)"/>
+    <rect width="3" height="3" x="10" y="18" fill="#6F2CCE" filter="url(#drop2)"/>
+    <rect width="2" height="2" x="14" y="6" fill="#5F26B4" filter="url(#drop3)"/>
+    <rect width="2" height="2" x="14" y="22" fill="#5F26B4" filter="url(#drop3)"/>
+
+    <rect width="4" height="4" x="15" y="13" fill="#7D32E6" filter="url(#drop1)"/>
+    <rect width="3" height="3" x="20" y="9" fill="#6F2CCE" filter="url(#drop2)"/>
+    <rect width="3" height="3" x="20" y="18" fill="#6F2CCE" filter="url(#drop2)"/>
+    <rect width="2" height="2" x="24" y="6" fill="#5F26B4" filter="url(#drop3)"/>
+    <rect width="2" height="2" x="24" y="22" fill="#5F26B4" filter="url(#drop3)"/>
+</svg>
